@@ -18,3 +18,46 @@ window.PORTFOLIO.experience = [
   { period: '年份 — 年份', title: '岗位 / 项目', description: '职责、贡献或项目成果' }
 ];
 */
+
+window.PORTFOLIO.works = [
+  {
+    "title": "程映",
+    "type": "image",
+    "cover": "cheng-ying.png",
+    "src": "cheng-ying.png",
+    "description": "28岁 · 视觉艺术总监。果断洒脱，审美鲜明。 角色设定 · 第二版，包含多视角、表情参考、面部特写、服饰细节与身体比例。",
+    "tags": [
+      "角色设定 · 第二版"
+    ]
+  },
+  {
+    "title": "林栀音",
+    "type": "image",
+    "cover": "lin-zhiyin.png",
+    "src": "lin-zhiyin.png",
+    "description": "26岁 · 纪录片导演。温柔敏锐，坚定。 角色设定 · 第二版，包含多视角、表情参考、面部特写、服饰细节与身体比例。",
+    "tags": [
+      "角色设定 · 第二版"
+    ]
+  },
+  {
+    "title": "陆然",
+    "type": "image",
+    "cover": "lu-ran.png",
+    "src": "lu-ran.png",
+    "description": "27岁 · 独立品牌主理人。沉稳敏锐，创造力。 角色设定 · 第二版，包含多视角、表情参考、面部特写、服饰细节与身体比例。",
+    "tags": [
+      "角色设定 · 第二版"
+    ]
+  },
+  {
+    "title": "裴川",
+    "type": "image",
+    "cover": "pei-chuan.png",
+    "src": "pei-chuan.png",
+    "description": "22岁 · 艺术系学生。鲜活浪漫，真诚自在。 角色设定 · 第二版，包含多视角、表情参考、面部特写、服饰细节与身体比例。",
+    "tags": [
+      "角色设定 · 第二版"
+    ]
+  }
+];
