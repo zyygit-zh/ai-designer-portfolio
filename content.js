@@ -61,3 +61,5 @@ window.PORTFOLIO.works = [
     ]
   }
 ];
+
+window.PORTFOLIO.collections = [{title:'短剧主角设定',description:'程映、林栀音、陆然、裴川。四位角色的多视角、表情、服饰细节与身体比例设定。',items:window.PORTFOLIO.works}];
