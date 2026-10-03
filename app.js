@@ -1,0 +1,14 @@
+const data=window.PORTFOLIO, $=id=>document.getElementById(id);
+$('name').textContent=data.name;$('bio').textContent=data.bio;$('about-text').textContent=data.about;
+$('github').href=data.github;$('copyright').textContent=`© ${new Date().getFullYear()} · AI Portfolio`;
+const labels={image:'图片',video:'视频',prompt:'Prompt'};
+function el(tag,text,cls){const node=document.createElement(tag);if(text)node.textContent=text;if(cls)node.className=cls;return node}
+function safeUrl(value){try{const url=new URL(value,location.href);return ['http:','https:'].includes(url.protocol)?url.href:''}catch{return ''}}
+data.skills.forEach(s=>$('skills').append(el('span',s)));
+if(!data.experience.length)$('experience').append(el('p','履历待补充。','notice'));
+data.experience.forEach(x=>{const row=el('div',null,'resume-row');row.append(el('p',x.period));const body=el('div');body.append(el('h3',x.title),el('p',x.description));row.append(body);$('experience').append(row)});
+let opener;
+function show(work,button){opener=button;const body=$('detail-content');body.replaceChildren();body.append(el('h2',work.title),el('p',work.description));const src=safeUrl(work.src);if(src&&work.type==='image'){const img=el('img');img.src=src;img.alt=work.title;body.append(img)}if(src&&work.type==='video'){const video=el('video');video.src=src;video.controls=true;video.playsInline=true;video.preload='metadata';const poster=safeUrl(work.cover);if(poster)video.poster=poster;body.append(video)}if(work.prompt){body.append(el('h3','Prompt'),el('pre',work.prompt));const copy=el('button','复制 Prompt','copy');copy.onclick=async()=>{try{await navigator.clipboard.writeText(work.prompt);copy.textContent='已复制'}catch{copy.textContent='复制失败，请选择上方文本复制'}};body.append(copy)}$('detail').showModal()}
+function render(type='all'){$('works').replaceChildren();const works=data.works.filter(w=>type==='all'||w.type===type);$('count').textContent=`${works.length} 件作品`;$('empty').hidden=works.length>0;works.forEach(w=>{const card=el('button',null,'card');card.type='button';card.setAttribute('aria-label',`查看${w.title}`);const cover=el('div',null,'cover');const src=safeUrl(w.cover||(w.type==='image'?w.src:''));if(src){const img=el('img');img.src=src;img.alt=w.title;img.loading='lazy';img.onerror=()=>cover.replaceChildren(el('span','封面暂不可用'));cover.append(img)}else cover.append(el('span',labels[w.type]||'作品'));card.append(cover,el('h3',w.title),el('div',[labels[w.type],...(w.tags||[])].filter(Boolean).join(' / '),'meta'));card.onclick=()=>show(w,card);$('works').append(card)})}
+document.querySelectorAll('[data-type]').forEach(button=>button.onclick=()=>{document.querySelectorAll('[data-type]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));render(button.dataset.type)});
+document.querySelector('.close').onclick=()=>$('detail').close();$('detail').addEventListener('close',()=>{const video=$('detail').querySelector('video');if(video)video.pause();opener?.focus()});render();
