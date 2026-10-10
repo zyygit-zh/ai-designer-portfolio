@@ -1,17 +1,9 @@
-# AI 设计师个人作品集
+# 朱雨雨 · AI / VISUAL DESIGNER
 
-线上地址：https://zyygit-zh.github.io/ai-designer-portfolio/
+线上网站：https://zyygit-zh.github.io/ai-designer-portfolio/
 
-首页是无边框悬浮作品画廊，支持移动端左右滑动吸附、桌面左右切换、键盘方向键与点击查看完整原图。尊重系统减少动态效果设置。
+黑色背景与玻璃 Z 封面，展示 12 个项目、完整角色设定板和 6 条视频。支持项目分类、横向作品画廊、项目详情、图片放大与视频播放，并提供 PDF / PPTX 作品集下载。
 
-## 首个作品集
+内容：`data.js`；布局：`index.html`；样式：`style.css`；交互：`app.js`。
 
-角色设定 · 第二版：程映、林栀音、陆然、裴川。四张原始 PNG 保留在仓库根目录。
-
-## 更新内容
-
-编辑 content.js 更新个人资料与作品。每个作品可设置 title、type（image/video/prompt）、cover、src、description、tags 和 prompt。提交 main 后 GitHub Pages 自动发布。
-
-## 本地预览
-
-运行 python3 -m http.server 8000，然后打开 http://localhost:8000。
+真实项目与 AI 辅助概念练习分别标注。提交 main 后由 GitHub Pages 自动发布。
