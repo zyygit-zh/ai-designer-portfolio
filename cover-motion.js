@@ -16,30 +16,57 @@ try{
  scene.background=new THREE.Color(0x060709);
  const camera=new THREE.PerspectiveCamera(36,1,.1,100);
  camera.position.set(0,0,8.8);
- const studio=new THREE.Scene();studio.background=new THREE.Color(0x08090c);
+ const studio=new THREE.Scene();studio.background=new THREE.Color(0xb6b0ba);
  const panel=(w,h,x,y,z,color,intensity)=>{
   const mesh=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:new THREE.Color(color).multiplyScalar(intensity),side:THREE.DoubleSide}));
   mesh.position.set(x,y,z);mesh.lookAt(0,0,0);studio.add(mesh);
  };
- panel(3,7,-4,2,2,0xffffff,3);
- panel(1.2,8,4,0,1,0xe9efff,4);
+ panel(3,7,-4,2,2,0xffd4ed,3);
+ panel(1.2,8,4,0,1,0xacf3ff,4);
  panel(6,1.4,0,5,1,0xffffff,4);
- panel(2.5,5,0,-3,-4,0x939aaa,1.4);
- panel(1.5,4,-2,0,5,0xffffff,2);
+ panel(2.5,5,0,-3,-4,0xcab8ff,3);
+ panel(1.5,4,-2,0,5,0xffffff,3);
  const pmrem=new THREE.PMREMGenerator(renderer);
  const environment=pmrem.fromScene(studio,.025);
  scene.environment=environment.texture;
  studio.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();}});
  pmrem.dispose();
- scene.add(new THREE.AmbientLight(0xffffff,.5));
+ scene.add(new THREE.AmbientLight(0xfff6fa,.85));
  const key=new THREE.DirectionalLight(0xffffff,3);key.position.set(-3,4,5);scene.add(key);
- const rim=new THREE.DirectionalLight(0xe6ecff,2.2);rim.position.set(4,-2,3);scene.add(rim);
+ const rim=new THREE.DirectionalLight(0xe8f5ff,2.5);rim.position.set(4,-2,3);scene.add(rim);
  const shape=new THREE.Shape();
  [[-1.18,1.65],[1.18,1.65],[1.18,1.15],[-.42,-1.08],[1.18,-1.08],[1.18,-1.65],[-1.18,-1.65],[-1.18,-1.15],[.42,1.08],[-1.18,1.08]].forEach(([x,y],i)=>i?shape.lineTo(x,y):shape.moveTo(x,y));shape.closePath();
  const geometry=new THREE.ExtrudeGeometry(shape,{depth:.46,bevelEnabled:true,bevelThickness:.11,bevelSize:.105,bevelSegments:8,steps:1,curveSegments:16});
  geometry.center();
- const glass=new THREE.MeshPhysicalMaterial({color:0xffffff,metalness:0,roughness:.035,transmission:1,thickness:.5,ior:1.38,envMapIntensity:.65,clearcoat:.45,clearcoatRoughness:.04,attenuationColor:0xf3f6ff,attenuationDistance:8});
- const letter=new THREE.Mesh(geometry,glass);scene.add(letter);
+ // A milky diffuse layer keeps the glass luminous against the black backdrop.
+ // Transmission blurs the lettering through the frost; dispersion splits its light,
+ // and the thin-film reflection adds restrained pastel color as the Z turns.
+ const glass=new THREE.MeshPhysicalMaterial({
+  color:0xfff0f7,metalness:0,roughness:.16,transmission:.78,
+  thickness:.65,ior:1.45,envMapIntensity:1.25,
+  clearcoat:.7,clearcoatRoughness:.12,
+  attenuationColor:0xfff5fa,attenuationDistance:8,
+  dispersion:.38,iridescence:.9,iridescenceIOR:1.3,
+  iridescenceThicknessRange:[160,420]
+ });
+ const edgeGlass=glass.clone();
+ edgeGlass.roughness=.075;edgeGlass.transmission=.86;
+ edgeGlass.clearcoatRoughness=.045;edgeGlass.envMapIntensity=1.8;
+ edgeGlass.iridescence=1;edgeGlass.dispersion=.55;
+ const prismTime={value:0};
+ edgeGlass.onBeforeCompile=shader=>{
+  shader.uniforms.uPrismTime=prismTime;
+  shader.fragmentShader='uniform float uPrismTime;\n'+shader.fragmentShader;
+  shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
+   float prismRim=pow(1.0-clamp(abs(dot(normalize(normal),normalize(vViewPosition))),0.0,1.0),1.35);
+   float prismAngle=dot(normalize(normal),vec3(.45,.75,.3))*.8+uPrismTime*.025;
+   vec3 prismSpectrum=.5+.5*cos(6.283185*(vec3(0.0,.333,.667)+prismAngle));
+   outgoingLight+=prismRim*prismSpectrum*.55;
+   #include <opaque_fragment>
+  `);
+ };
+ // The bevels remain clearer so pastel prism glints move along the silhouette.
+ const letter=new THREE.Mesh(geometry,[glass,edgeGlass]);scene.add(letter);
  const textRows=[];
  function row(text,y,fontSize,width){
   const canvas=document.createElement('canvas');canvas.width=2048;canvas.height=360;
@@ -63,6 +90,7 @@ try{
   camera.updateProjectionMatrix();draw();
  }
  function draw(){
+  prismTime.value=time;
   smooth.x+=(pointer.x-smooth.x)*.035;smooth.y+=(pointer.y-smooth.y)*.035;
   letter.rotation.set(.12+Math.sin(time*.38)*.15+smooth.y*.12,-.32+Math.sin(time*.48)*.64+smooth.x*.3,Math.sin(time*.33)*.075);
   letter.position.y=Math.sin(time*.62)*.13;
