@@ -1,17 +1,22 @@
-# AI 设计师个人作品集
+# 朱雨雨 · AI / VISUAL DESIGNER
 
-线上地址：https://zyygit-zh.github.io/ai-designer-portfolio/
+黑白作品集改版草稿。结构：全屏封面 → 视觉作品集 → 视频作品集 → 关于与履历 → 联系。
 
-首页是无边框悬浮作品画廊，支持移动端左右滑动吸附、桌面左右切换、键盘方向键与点击查看完整原图。尊重系统减少动态效果设置。
+## 当前状态
+代码已准备，尚未接入新增图片、视频和简历文件，未进行浏览器实测。正式 main 分支仍保留原页面。
+本分支不能作为完整成品直接上线。
 
-## 首个作品集
+## 接续步骤
+1. 从已上传素材按 assets-required.json 安装文件。项目 sources/ 下的同步素材只读，不修改原文件。
+2. 核对视觉全品类.zip 内的正式展示版本，去除不需展示的过程版本；相应更新 content.js。
+3. 四段视频生成网页派生版本（H.264/AAC，faststart，合理码率与尺寸），为每段提取同名 JPG 封面。原视频保留不变。
+4. 开屏使用用户封面图。20261010-214126.mp4 是参考录屏，含其他品牌字样与控件，不作为正式首页视频。
+5. 对所有本地资源检查存在性；在桌面和手机检查导航、筛选、整套图片、视频播放、暂停、关闭、键盘焦点与简历入口。
+6. 合并到 main，等待 GitHub Pages 部署成功，核对正式 URL。
 
-角色设定 · 第二版：程映、林栀音、陆然、裴川。四张原始 PNG 保留在仓库根目录。
+网站地址：https://zyygit-zh.github.io/ai-designer-portfolio/
 
-## 更新内容
-
-编辑 content.js 更新个人资料与作品。每个作品可设置 title、type（image/video/prompt）、cover、src、description、tags 和 prompt。提交 main 后 GitHub Pages 自动发布。
-
-## 本地预览
-
-运行 python3 -m http.server 8000，然后打开 http://localhost:8000。
+## 内容维护
+- content.js：简历信息、作品分类和素材路径。
+- index.html / style.css / app.js：页面、响应式样式和交互。
+- assets-required.json：原文件名到网站资源路径的接入清单，不含认证信息。

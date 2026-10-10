@@ -1,1 +1,34 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="AI 设计师个人作品集，探索视觉、影像与角色设计。"><title>AI Designer · Portfolio</title><link rel="stylesheet" href="style.css?v=4"></head><body><div class="ambient" aria-hidden="true"></div><header><a class="brand" href="#">AI / PORTFOLIO</a><nav aria-label="主导航"><a href="#work">作品</a><a href="#about">关于</a><a href="#resume">履历</a></nav></header><main><section id="work" class="gallery-home"><div class="gallery-heading"><div class="eyebrow">A PERSONAL CREATIVE SPACE</div><h1>作品画廊<span>Selected collections</span></h1></div><div id="works" class="gallery" tabindex="0" role="region" aria-label="作品集画廊，可左右滑动"></div><div class="gallery-controls"><span>滑动浏览作品集 · 点击展开</span><div><button id="gallery-prev" aria-label="查看前面的作品集">上一组</button><button id="gallery-next" aria-label="查看后面的作品集">下一组</button></div></div></section><section id="about" class="glass about"><div><div class="eyebrow">ABOUT ME</div><h2 id="name"></h2><span>AI 设计师</span></div><div><p id="about-text"></p><div id="skills" class="skills"></div><a id="github" target="_blank" rel="noopener noreferrer">GitHub</a></div></section><section id="resume" class="glass"><div class="eyebrow">EXPERIENCE</div><h2>个人履历</h2><div id="experience"></div></section></main><footer><span id="copyright"></span><span>以想象为起点，以设计为表达。</span></footer><dialog id="detail" aria-labelledby="detail-title"><div class="dialog-top"><div><span class="eyebrow">COLLECTION / 01</span><h2 id="detail-title"></h2></div><button class="close" aria-label="关闭作品集">关闭</button></div><p id="detail-description"></p><div id="detail-content" class="inside-grid"></div></dialog><script src="content.js?v=4"></script><script src="app.js?v=4"></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="朱雨雨的 AI 视觉设计作品集：品牌视觉、角色设计、动态影像与技术美术。">
+<meta name="theme-color" content="#080808"><title>朱雨雨 · AI / VISUAL DESIGNER</title>
+<link rel="stylesheet" href="style.css?v=20261010">
+</head>
+<body>
+<a class="skip" href="#work">跳到作品</a>
+<header class="site-header"><a class="brand" href="#home" aria-label="朱雨雨首页">ZHU YUYU<span>AI / VISUAL DESIGNER</span></a><nav aria-label="主导航"><a href="#work">作品</a><a href="#film">影像</a><a href="#about">关于</a><a href="#contact">联系 ↗</a></nav></header>
+<main>
+<section class="hero" id="home" aria-label="黑底与透明反光的玻璃字母 Z，AI / VISUAL DESIGNER">
+<div class="hero-fallback" aria-hidden="true"><div class="ticker"><span>AI / VISUAL &nbsp; AI / VISUAL &nbsp;</span><span>AI / VISUAL &nbsp; AI / VISUAL &nbsp;</span></div><div class="ticker reverse"><span>DESIGNER &nbsp; DESIGNER &nbsp;</span><span>DESIGNER &nbsp; DESIGNER &nbsp;</span></div><div class="glass-z"></div></div>
+<img id="hero-cover" class="hero-cover" src="assets/hero/cover.png" alt="" fetchpriority="high">
+<h1 class="sr-only">朱雨雨 · AI 视觉设计师作品集</h1>
+<div class="hero-bottom"><a class="work-entry" href="#work">VIEW WORKS <span>↘</span><small>查看作品</small></a><span class="hero-caption">ZHU YUYU / 2026<br>SELECTED WORKS</span></div>
+</section>
+<section id="work" class="section works-section">
+<div class="section-heading"><div><p class="eyebrow">01 / SELECTED WORKS</p><h2>视觉，<br><span>不止一种可能。</span></h2></div><p class="section-intro">从品牌与产品的表达，<br>到人物、空间和故事的构建。</p></div>
+<div class="filter-bar" role="group" aria-label="作品分类"><button data-filter="全部" aria-pressed="true">全部作品</button><button data-filter="品牌视觉" aria-pressed="false">品牌视觉</button><button data-filter="角色设计" aria-pressed="false">角色设计</button><span id="work-count"></span></div>
+<div id="works" class="work-grid"></div>
+</section>
+<section id="film" class="section film-section">
+<div class="section-heading"><div><p class="eyebrow">02 / MOTION & FILM</p><h2>让画面，<br><span>开始讲述。</span></h2></div><p class="section-intro">人物、产品与动态叙事。<br>点击播放，进入每一段影像。</p></div><div id="films" class="film-grid"></div>
+</section>
+<section id="about" class="section about-section"><div><p class="eyebrow">03 / ABOUT ME</p><h2>ART.<br>AI.<br><span>EXPLORATION.</span></h2><a class="text-link" href="assets/resume/zhu-yuyu.pdf" target="_blank" rel="noopener">查看简历 ↗</a></div><div class="about-copy"><h3>我是朱雨雨。<br>AI 视觉设计师 / 技术美术</h3><p id="about-text"></p><div id="skills" class="skills"></div><div id="experience" class="experience"></div><p class="education" id="education"></p></div></section>
+<section class="section tools-section"><p class="eyebrow">TOOLS & WORKFLOW</p><h2>MAKE. REFINE. REPEAT.</h2><div class="tool-grid"><article><span>01</span><h3>诸暨袜业定制平台</h3><p>牵头搭建数字化视觉生产线与一站式网页服务平台，衔接 AI 袜子图案生成、工业点针图纸转换、素材管理与在线出图运营。</p></article><article><span>02</span><h3>Python 批量出图工具</h3><p>通过 Vibe Coding 搭建自动化脚本，支持素材批量生成、风格统一校准与文件批量导出。</p></article></div><p class="note">工作职责依据简历整理。</p></section>
+<section id="contact" class="section contact-section"><p class="eyebrow">LET’S CONNECT</p><h2>LET’S<br>CREATE<span>↗</span></h2><div class="contact-links"><a href="mailto:173133390@qq.com">173133390@qq.com ↗</a><a href="tel:+8617605816173">17605816173 ↗</a><span>杭州 / 视觉设计师</span></div></section>
+</main>
+<footer><span>朱雨雨 © 2026</span><span>真实项目与概念练习分别标注。</span><a href="#home">回到顶部 ↑</a></footer>
+<dialog id="detail" aria-labelledby="detail-title"><div class="dialog-top"><div><p class="eyebrow" id="detail-label"></p><h2 id="detail-title"></h2></div><button class="close" type="button" aria-label="关闭作品详情">关闭 ×</button></div><p id="detail-description"></p><div id="detail-content"></div></dialog>
+<script src="content.js?v=20261010"></script><script src="app.js?v=20261010"></script>
+</body></html>

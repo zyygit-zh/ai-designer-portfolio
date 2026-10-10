@@ -1,0 +1,154 @@
+{
+  "status": "pending-materialization",
+  "note": "Do not deploy this branch before every listed media asset has been installed and browser QA has passed. Reference recording 20261010-214126.mp4 is not a final hero video.",
+  "assets": [
+    {
+      "source": "NOVA PERFORMANCE双面宣传单页.png",
+      "path": "assets/nova/01.png"
+    },
+    {
+      "source": "NOVA PERFORMANCE未来驾驭画册.png",
+      "path": "assets/nova/02.png"
+    },
+    {
+      "source": "NOVA PERFORMANCE 高端车主礼盒.png",
+      "path": "assets/nova/03.png"
+    },
+    {
+      "source": "NOVA未来性能跑车易拉宝展板.png",
+      "path": "assets/nova/04.png"
+    },
+    {
+      "source": "NOVA PERFORMANCE汽车发布会展陈.png",
+      "path": "assets/nova/05.png"
+    },
+    {
+      "source": "NOVA PERFORMANCE 未来驾驭详情页.png",
+      "path": "assets/nova/06.png"
+    },
+    {
+      "source": "NOVA性能品牌视觉提案.png",
+      "path": "assets/nova/07.png"
+    },
+    {
+      "source": "NOVA未来蓝色超跑海报.png",
+      "path": "assets/nova/08.png"
+    },
+    {
+      "source": "巡逻机器人展厅视觉设计.png",
+      "path": "assets/patrol/01.png"
+    },
+    {
+      "source": "巡逻机器人运输包装展示.png",
+      "path": "assets/patrol/02.png"
+    },
+    {
+      "source": "双横幅机器人产品展示.png",
+      "path": "assets/patrol/03.png"
+    },
+    {
+      "source": "巡逻机器人视觉设计展板.png",
+      "path": "assets/patrol/04.png"
+    },
+    {
+      "source": "未来巡逻机器人易拉宝.png",
+      "path": "assets/patrol/05.png"
+    },
+    {
+      "source": "巡逻机器人产品海报.png",
+      "path": "assets/patrol/06.png"
+    },
+    {
+      "source": "巡逻机器人未来感画册.png",
+      "path": "assets/patrol/07.png"
+    },
+    {
+      "source": "未来巡逻机器人.png",
+      "path": "assets/patrol/08.png"
+    },
+    {
+      "source": "未来巡逻机器人详情.png",
+      "path": "assets/patrol/09.png"
+    },
+    {
+      "source": "巡逻机器人宣传单页.png",
+      "path": "assets/patrol/10.png"
+    },
+    {
+      "source": "欧巡 P01 工业运输包装娱乐主管.png",
+      "path": "assets/orbit/01.png"
+    },
+    {
+      "source": "欧巡P01线下展览系统.png",
+      "path": "assets/orbit/02.png"
+    },
+    {
+      "source": "ORBIT欧巡P01六联内容矩阵.png",
+      "path": "assets/orbit/03.png"
+    },
+    {
+      "source": "欧巡 P01 巡逻机器人品牌画册.png",
+      "path": "assets/orbit/04.png"
+    },
+    {
+      "source": "ORBIT欧巡 P01 巡逻机器人设计.png",
+      "path": "assets/orbit/05.png"
+    },
+    {
+      "source": "欧巡P01三联易拉宝系列.png",
+      "path": "assets/orbit/06.png"
+    },
+    {
+      "source": "欧巡 P01 巡逻机器人双面单页.png",
+      "path": "assets/orbit/07.png"
+    },
+    {
+      "source": "欧巡P01巡逻机器人主视觉.png",
+      "path": "assets/orbit/08.png"
+    },
+    {
+      "source": "智巡未来：ORBIT P01发布视觉.png",
+      "path": "assets/launch/01.png"
+    },
+    {
+      "source": "智巡未来：ORBIT P01 发布会.png",
+      "path": "assets/launch/02.png"
+    },
+    {
+      "source": "智巡未来｜欧巡P01发布视觉.png",
+      "path": "assets/launch/03.png"
+    },
+    {
+      "source": "智巡未来：欧巡P01概念发布.png",
+      "path": "assets/launch/04.png"
+    },
+    {
+      "source": "公主请自重-1.mp4",
+      "path": "assets/films/princess.mp4",
+      "processing": "生成适合网页播放的 H.264/AAC MP4；保留原视频，派生网页版本；提取封面为同名 .jpg"
+    },
+    {
+      "source": "情绪交易cg.mp4",
+      "path": "assets/films/emotion.mp4",
+      "processing": "生成适合网页播放的 H.264/AAC MP4；保留原视频，派生网页版本；提取封面为同名 .jpg"
+    },
+    {
+      "source": "角色展示视频-卡点.mp4",
+      "path": "assets/films/character-film.mp4",
+      "processing": "生成适合网页播放的 H.264/AAC MP4；保留原视频，派生网页版本；提取封面为同名 .jpg"
+    },
+    {
+      "source": "五粮液广告加声音.mp4",
+      "path": "assets/films/wuliangye.mp4",
+      "processing": "生成适合网页播放的 H.264/AAC MP4；保留原视频，派生网页版本；提取封面为同名 .jpg"
+    },
+    {
+      "source": "Snipaste_2026-10-10_22-23-30.png",
+      "path": "assets/hero/cover.png"
+    },
+    {
+      "source": "朱雨雨简历.pdf",
+      "path": "assets/resume/zhu-yuyu.pdf"
+    }
+  ]
+}
