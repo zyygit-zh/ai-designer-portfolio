@@ -12,3 +12,5 @@
 
 .cover-entry{min-width:150px}
 @media(max-width:800px){.cover-entry{min-width:110px}}
+
+@font-face{font-family:CoverDisplay;src:url("vendor/Anton-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
