@@ -7,3 +7,11 @@
 .production-image{display:block;cursor:zoom-in}
 .production-image img{display:block;width:100%;height:auto;margin:0}
 @media(max-width:800px){.production-section{padding:22px 12px 24px}.production-heading{margin-bottom:14px}.production-heading h2{font-size:18px}}
+
+/* Read the resource map before the finished video. */
+.video-project>.production-section{padding-top:70px;border-top:0}
+.production-description{max-width:880px;margin:24px 0 0;color:#aab6a4;font-size:14px;line-height:1.9}
+.production-video{border-top:1px solid #c2ef9b26;padding-top:26px}
+.production-video>h2{margin:0 24px;color:#e8f3df;font-size:20px;font-weight:500;letter-spacing:.02em}
+.production-video>.media-videos{padding-top:22px}
+@media(max-width:800px){.video-project>.production-section{padding-top:60px}.production-description{font-size:13px;margin-top:20px}.production-video>h2{margin:0 12px;font-size:18px}.production-video{padding-top:22px}}
