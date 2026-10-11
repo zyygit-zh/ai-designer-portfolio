@@ -1,0 +1,9 @@
+/* Production artwork belongs only to video projects. */
+.production-section{padding:26px 24px 32px;border-top:1px solid #c2ef9b26}
+.production-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px}
+.production-heading h2{margin:0;color:#e8f3df;font-size:20px;font-weight:500;letter-spacing:.02em}
+.production-heading>a{color:#b9d99e;font-size:12px;white-space:nowrap}
+.production-heading>a:hover{text-decoration:underline;text-underline-offset:4px}
+.production-image{display:block;cursor:zoom-in}
+.production-image img{display:block;width:100%;height:auto;margin:0}
+@media(max-width:800px){.production-section{padding:22px 12px 24px}.production-heading{margin-bottom:14px}.production-heading h2{font-size:18px}}

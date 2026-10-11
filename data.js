@@ -148,7 +148,15 @@ window.portfolioProjects=[
         "assets/film-2-2.webp"
       ]
     ],
-    "note": "芒果 TV 合作项目关系与个人职责按本人简历整理。成片关键帧用于项目展示，完整成片包含团队其他环节的工作。"
+    "note": "芒果 TV 合作项目关系与个人职责按本人简历整理。成片关键帧用于项目展示，完整成片包含团队其他环节的工作。",
+    "productionImages": [
+      {
+        "src": "assets/production/princess-node-map.png",
+        "width": 2048,
+        "height": 1504,
+        "alt": "《公主请自重》制作过程：角色四视图、环境设定与镜头映射节点图"
+      }
+    ]
   },
   {
     "id": "product",

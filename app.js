@@ -44,7 +44,8 @@ function showProject(id,videoFirst=false){
   return `<button data-image="${i}" aria-label="放大${esc(caption)}"><img src="${src}" alt="${esc(caption)}" ${i?'loading="lazy"':''} decoding="async"></button>`;
  }).join('');
  const videos=(p.videos||[]).map(([src,title,poster])=>`<video controls playsinline preload="none" poster="${poster}" src="${src}" aria-label="${esc(title)}"></video>`).join('');
- const content=videoFirst&&videos?`<div class="media-videos">${videos}</div>`:longImages?`<div class="longform-images">${longImages}</div>`:`<div class="media-images">${images}</div>`;
+ const production=(p.productionImages||[]).map(({src,width,height,alt})=>`<a class="production-image" href="${src}" target="_blank" rel="noopener" aria-label="查看${esc(p.title)}制作过程原图"><img src="${src}" alt="${esc(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async"></a>`).join('');
+ const content=production?`<div class="video-project"><div class="media-videos">${videos}</div><section class="production-section" aria-label="制作过程"><div class="production-heading"><h2>制作过程</h2><a href="${p.productionImages[0].src}" target="_blank" rel="noopener">查看原图 ↗</a></div>${production}</section></div>`:videoFirst&&videos?`<div class="media-videos">${videos}</div>`:longImages?`<div class="longform-images">${longImages}</div>`:`<div class="media-images">${images}</div>`;
  document.querySelector('#project-content').innerHTML=content;
  if(!dialog.open)dialog.showModal();dialog.scrollTop=0;document.body.classList.add('modal-open');
 }
