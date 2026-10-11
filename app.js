@@ -37,7 +37,10 @@ function showProject(id,videoFirst=false){
  currentProject=p;currentImages=[];
  dialog.setAttribute('aria-label',p.title);dialog.removeAttribute('aria-labelledby');
  document.querySelector('#project-type').textContent='';
- const longImages=(p.longImages||[]).map(({src,width,height})=>`<img src="${src}" alt="${esc(p.title+'完整作品图')}" width="${width}" height="${height}" decoding="async">`).join('');
+ const longImages=(p.longImages||[]).map(({src,width,height,caption,credit,alt})=>{
+  const image=`<img src="${src}" alt="${esc(alt||p.title+'完整作品图')}" width="${width}" height="${height}" decoding="async">`;
+  return caption?`<figure class="longform-tool"><figcaption><span>${esc(caption)}</span>${credit?`<span class="tool-credit">${esc(credit)}</span>`:''}</figcaption>${image}</figure>`:image;
+ }).join('');
  const imageItems=p.sections.flatMap(section=>section.images);
  const images=imageItems.map(([src,caption],i)=>{
   currentImages.push({src,caption});

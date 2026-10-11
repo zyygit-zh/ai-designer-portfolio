@@ -613,6 +613,14 @@ window.portfolioProjects=[
         "src": "assets/longform/socks.png?v=original-7",
         "width": 1280,
         "height": 5496
+      },
+      {
+        "src": "assets/tools/socks-batch-tool.png",
+        "width": 2048,
+        "height": 1429,
+        "caption": "批量制作小工具",
+        "credit": "使用 Vibe Coding 制作",
+        "alt": "Midjourney 批量制作小工具界面"
       }
     ],
     "cover": "assets/catalog/socks.jpg"
