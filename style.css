@@ -118,3 +118,18 @@
  .catalog .catalog-navigation .gallery-bottom{padding:3px 0 22px;font-size:9px}
 }
 @media(max-width:380px){.catalog .filters button{font-size:15px;padding:14px 11px}.catalog .catalog-navigation .gallery-bottom{font-size:8px}}
+
+/* Image-first project viewers, without editorial introductions. */
+#project-dialog{padding:0;height:fit-content;max-height:90vh;border-radius:14px;background:#080b09}
+#project-dialog .dialog-top{height:0;min-height:0;padding:0;border:0;justify-content:flex-end;background:transparent;backdrop-filter:none;overflow:visible}
+#project-dialog .dialog-top>span{display:none}
+#project-dialog #close-project{position:absolute;right:15px;top:15px;padding:9px 15px;min-height:40px;border:1px solid #ffffff66;border-radius:24px;background:#090e0bd9;color:#f1f8ee;backdrop-filter:blur(16px);box-shadow:0 3px 16px #0004;font-size:13px;line-height:1.5}
+#project-dialog #close-project:focus-visible{outline:2px solid #c2ef9b;outline-offset:3px}
+.longform-images,.media-images{width:100%;margin:0 auto}
+.longform-images img{display:block;width:100%;height:auto;max-height:none;margin:0;object-fit:contain}
+.media-images{display:grid;grid-template-columns:1fr;gap:0}
+.media-images button{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
+.media-images img{display:block;width:100%;height:auto;margin:0}
+.media-videos{min-height:100%;display:grid;align-content:center;gap:20px;padding:70px 0 30px}
+.media-videos video{display:block;width:100%;max-height:75vh;background:#000}
+@media(max-width:800px){#project-dialog{width:96vw;height:fit-content;max-height:94dvh;border-radius:10px}#project-dialog #close-project{right:10px;top:10px;font-size:12px;min-height:36px;padding:7px 12px}.media-videos{padding-top:60px}}

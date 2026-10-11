@@ -4,7 +4,7 @@ const gallery=document.querySelector('#gallery'),galleryRange=document.querySele
 let filter='visual',currentProject=null,currentImages=[],imageIndex=0,lastTrigger=null;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function catalogProjects(){
- const order=filter==='video'?['princess','emotion','product','character','clothing']:['orbit','launch','still','weekend','between','form','clothing','character-design'];
+ const order=filter==='video'?['princess','emotion','product','character','clothing']:['orbit','launch','still','weekend','between','form','nova','pawpal','city','zegl','socks','beiji','clothing','character-design'];
  return order.map(id=>projects.find(p=>p.id===id)).filter(Boolean);
 }
 function renderGallery(){
@@ -12,7 +12,7 @@ function renderGallery(){
  document.querySelector('#catalog-type').textContent=video?'AI VIDEO PRODUCTION':'GRAPHIC & VISUAL DESIGN';
  gallery.setAttribute('aria-label',video?'AI 视频制作项目目录':'平面视觉设计项目目录');
  gallery.innerHTML=list.map((p,i)=>`<button class="work catalog-card" data-project="${p.id}" ${video?'data-mode="video"':''} aria-label="查看${esc(p.title)}${video?'视频':''}" style="--card-angle:${[-7,-2,6,-5,4,-3,6,-4][i%8]}deg;--card-offset:${[20,0,27,9,23,3,18,7][i%8]}px">
- <div class="catalog-card-top"><span class="catalog-card-number">${String(i+1).padStart(2,'0')}</span><span class="catalog-card-label">${video?'AI VIDEO':p.category==='concept'?'概念练习':'视觉项目'}</span></div>
+ <div class="catalog-card-top"><span class="catalog-card-number">${String(i+1).padStart(2,'0')}</span>${video?'<span class="catalog-card-label">AI VIDEO</span>':''}</div>
  <h3>${esc(p.title)}</h3><p class="catalog-card-subtitle">${esc(video?p.id==='clothing'?'虚拟童模 · 动态换装':p.subtitle:p.subtitle)}</p>
  <div class="catalog-thumbnail"><img src="${p.cover}" alt="${esc(p.title+'作品预览')}" draggable="false" ${i>3?'loading="lazy"':''}>${video?'<span class="catalog-play" aria-hidden="true">▶</span>':''}</div>
  <span class="catalog-card-bottom">${video?'观看作品':'进入项目'} <span aria-hidden="true">↗</span></span>
@@ -35,13 +35,17 @@ function shift(direction){const card=gallery.querySelector('.work');if(card)gall
 function showProject(id,videoFirst=false){
  const p=projects.find(p=>p.id===id);if(!p)return;
  currentProject=p;currentImages=[];
- document.querySelector('#project-type').textContent=p.label;
- const images=p.sections.map(section=>`<section><h3>${esc(section.title)}</h3>${section.text?`<p class="section-copy">${esc(section.text)}</p>`:''}<div class="project-images ${section.layout}">${section.images.map(([src,caption])=>{
-  const i=currentImages.length;currentImages.push({src,caption});
-  return `<figure><button data-image="${i}" aria-label="放大${esc(caption)}"><img src="${src}" loading="lazy" alt="${esc(caption)}"></button><figcaption>${esc(caption)}</figcaption></figure>`;
- }).join('')}</div></section>`).join('');
- const videos=(p.videos||[]).map(([src,title,poster])=>`<section class="video-block"><h3>${esc(title)}</h3><video controls playsinline preload="none" poster="${poster}" src="${src}"></video><p>点击播放。声音、进度和全屏可通过播放器控制。</p></section>`).join('');
- document.querySelector('#project-content').innerHTML=`<div class="project-header"><h2 id="project-title">${esc(p.title)}</h2><p class="summary">${esc(p.summary)}</p><div class="project-facts"><div><strong>展示范围</strong>${esc(p.scope)}</div><div><strong>个人职责</strong>${esc(p.role)}</div></div></div><div class="project-body">${videoFirst?videos+images:images+videos}<p class="project-note">${esc(p.note||(p.category==='concept'?'本项目为此前会话的 AI 辅助概念练习，未标为真实客户项目。展示图为位图，图内文字、产品一致性和原生设计规范仍需精修。':''))}</p></div>`;
+ dialog.setAttribute('aria-label',p.title);dialog.removeAttribute('aria-labelledby');
+ document.querySelector('#project-type').textContent='';
+ const longImages=(p.longImages||[]).map(({src,width,height})=>`<img src="${src}" alt="${esc(p.title+'完整作品图')}" width="${width}" height="${height}" decoding="async">`).join('');
+ const imageItems=p.sections.flatMap(section=>section.images);
+ const images=imageItems.map(([src,caption],i)=>{
+  currentImages.push({src,caption});
+  return `<button data-image="${i}" aria-label="放大${esc(caption)}"><img src="${src}" alt="${esc(caption)}" ${i?'loading="lazy"':''} decoding="async"></button>`;
+ }).join('');
+ const videos=(p.videos||[]).map(([src,title,poster])=>`<video controls playsinline preload="none" poster="${poster}" src="${src}" aria-label="${esc(title)}"></video>`).join('');
+ const content=videoFirst&&videos?`<div class="media-videos">${videos}</div>`:longImages?`<div class="longform-images">${longImages}</div>`:`<div class="media-images">${images}</div>`;
+ document.querySelector('#project-content').innerHTML=content;
  if(!dialog.open)dialog.showModal();dialog.scrollTop=0;document.body.classList.add('modal-open');
 }
 function stopVideo(){dialog.querySelectorAll('video').forEach(v=>v.pause());}

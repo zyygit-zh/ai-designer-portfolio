@@ -448,35 +448,13 @@ window.portfolioProjects=[
     "title": "ORBIT 欧巡",
     "subtitle": "巡逻机器人产品品牌",
     "category": "concept",
-    "label": "AI 辅助概念练习",
     "cover": "assets/orbit.webp",
-    "summary": "围绕虚构巡逻机器人探索产品品牌。黑白机身与橙色细节建立识别，轨道元素延展到宣传、画册与展览空间。",
-    "role": "AI 辅助概念构思与素材探索。",
-    "scope": "产品品牌、宣传视觉、画册、展览",
-    "sections": [
+    "sections": [],
+    "longImages": [
       {
-        "title": "产品主视觉与外观",
-        "layout": "single",
-        "images": [
-          [
-            "assets/orbit.webp",
-            "产品外观与主视觉"
-          ]
-        ]
-      },
-      {
-        "title": "画册与空间延展",
-        "layout": "single",
-        "images": [
-          [
-            "assets/orbit-book.webp",
-            "产品画册概念"
-          ],
-          [
-            "assets/orbit-exhibit.webp",
-            "展览与品牌触点概念"
-          ]
-        ]
+        "src": "assets/longform/orbit.png",
+        "width": 269,
+        "height": 2048
       }
     ]
   },
@@ -485,35 +463,13 @@ window.portfolioProjects=[
     "title": "智巡未来",
     "subtitle": "机器人产品发布会",
     "category": "concept",
-    "label": "AI 辅助概念练习",
     "cover": "assets/launch.webp",
-    "summary": "将机器人品牌延展为具有仪式感的发布活动。深蓝色与发光圆弧贯穿舞台、入口及体验空间。",
-    "role": "AI 辅助概念构思与素材探索。",
-    "scope": "主视觉、舞台、发布屏与空间",
-    "sections": [
+    "sections": [],
+    "longImages": [
       {
-        "title": "发布主视觉",
-        "layout": "single",
-        "images": [
-          [
-            "assets/launch-kv.webp",
-            "发布会主视觉"
-          ]
-        ]
-      },
-      {
-        "title": "舞台与演示节奏",
-        "layout": "single",
-        "images": [
-          [
-            "assets/launch.webp",
-            "舞台与体验空间概念"
-          ],
-          [
-            "assets/launch-screen.webp",
-            "发布演示屏概念"
-          ]
-        ]
+        "src": "assets/longform/launch.png",
+        "width": 833,
+        "height": 2048
       }
     ]
   },
@@ -522,35 +478,13 @@ window.portfolioProjects=[
     "title": "STILL 间息",
     "subtitle": "香氛品牌与包装",
     "category": "concept",
-    "label": "AI 辅助概念练习",
     "cover": "assets/still.webp",
-    "summary": "米白与墨绿配合植物线描和自然光，建立安静的香氛消费品牌表达。统一瓶型与标签层级，以色条区分系列。",
-    "role": "AI 辅助概念构思与素材探索。",
-    "scope": "品牌语言、包装与宣传",
-    "sections": [
+    "sections": [],
+    "longImages": [
       {
-        "title": "品牌语言与产品家族",
-        "layout": "single",
-        "images": [
-          [
-            "assets/still-brand.webp",
-            "品牌视觉规则概念"
-          ],
-          [
-            "assets/still.webp",
-            "包装与产品家族概念"
-          ]
-        ]
-      },
-      {
-        "title": "品牌传播",
-        "layout": "single",
-        "images": [
-          [
-            "assets/still-social.webp",
-            "海报与社交媒体概念"
-          ]
-        ]
+        "src": "assets/longform/still.png",
+        "width": 361,
+        "height": 2048
       }
     ]
   },
@@ -559,35 +493,13 @@ window.portfolioProjects=[
     "title": "周末出逃计划",
     "subtitle": "活动营销与导视",
     "category": "concept",
-    "label": "AI 辅助概念练习",
     "cover": "assets/weekend-kv.webp",
-    "summary": "用明亮色彩、拼贴图形和活动图标建立户外生活节视觉。颜色与图标帮助观众辨认主题与分区。",
-    "role": "AI 辅助概念构思与素材探索。",
-    "scope": "主视觉、社媒与现场导视",
-    "sections": [
+    "sections": [],
+    "longImages": [
       {
-        "title": "主视觉与传播适配",
-        "layout": "single",
-        "images": [
-          [
-            "assets/weekend-kv.webp",
-            "活动主视觉概念"
-          ],
-          [
-            "assets/weekend-social.webp",
-            "传播物料概念"
-          ]
-        ]
-      },
-      {
-        "title": "地图与现场导视",
-        "layout": "single",
-        "images": [
-          [
-            "assets/weekend.webp",
-            "活动地图与导视概念"
-          ]
-        ]
+        "src": "assets/longform/weekend.png",
+        "width": 402,
+        "height": 2048
       }
     ]
   },
@@ -596,65 +508,119 @@ window.portfolioProjects=[
     "title": "街间 BETWEEN",
     "subtitle": "刊物与编辑设计",
     "category": "concept",
-    "label": "AI 辅助概念练习",
     "cover": "assets/between.webp",
-    "summary": "围绕城市街巷组织内容，以统一网格、字体层级和页码建立连续阅读。大图、短文与组图形成不同节奏。",
-    "role": "AI 辅助概念构思与素材探索。",
-    "scope": "封面、编辑规范与连续内页",
-    "sections": [
+    "sections": [],
+    "longImages": [
       {
-        "title": "封面与网格",
-        "layout": "single",
-        "images": [
-          [
-            "assets/between.webp",
-            "封面与编辑规范概念"
-          ]
-        ]
-      },
-      {
-        "title": "连续内页",
-        "layout": "single",
-        "images": [
-          [
-            "assets/between-pages.webp",
-            "专题连续内页概念"
-          ]
-        ]
+        "src": "assets/longform/between.png",
+        "width": 768,
+        "height": 2048
       }
     ]
   },
   {
     "id": "form",
-    "title": "FORM 灵感工作台",
-    "subtitle": "AI 创作工具界面",
+    "title": "珠宝灵感",
+    "subtitle": "首饰 AI 创作界面",
     "category": "concept",
-    "label": "AI 辅助概念练习",
-    "cover": "assets/form.webp",
-    "summary": "组织 AI 饰品创作流程，让参考图、提示词与结果按任务顺序排列。四宫格帮助比较方案，移动端保留输入、生成与重试状态。",
-    "role": "AI 辅助概念构思与素材探索。",
-    "scope": "桌面界面与移动端状态",
-    "sections": [
+    "cover": "assets/catalog/jewelry.jpg",
+    "sections": [],
+    "longImages": [
       {
-        "title": "桌面创作工作台",
-        "layout": "single",
-        "images": [
-          [
-            "assets/form.webp",
-            "桌面界面概念"
-          ]
-        ]
-      },
-      {
-        "title": "移动端状态",
-        "layout": "single",
-        "images": [
-          [
-            "assets/form-mobile.webp",
-            "移动端与界面状态概念"
-          ]
-        ]
+        "src": "assets/longform/jewelry.png",
+        "width": 481,
+        "height": 2048
       }
     ]
+  },
+  {
+    "id": "nova",
+    "title": "NOVA 汽车品牌",
+    "subtitle": "汽车品牌与全套视觉",
+    "category": "visual",
+    "sections": [],
+    "longImages": [
+      {
+        "src": "assets/longform/nova.png",
+        "width": 234,
+        "height": 2048
+      }
+    ],
+    "cover": "assets/catalog/nova.jpg"
+  },
+  {
+    "id": "pawpal",
+    "title": "PAWPAL 爪伴烘焙",
+    "subtitle": "宠物烘焙品牌视觉",
+    "category": "visual",
+    "sections": [],
+    "longImages": [
+      {
+        "src": "assets/longform/pawpal.png",
+        "width": 683,
+        "height": 2048
+      }
+    ],
+    "cover": "assets/catalog/pawpal.jpg"
+  },
+  {
+    "id": "city",
+    "title": "城市漫游",
+    "subtitle": "四幕插画与应用",
+    "category": "visual",
+    "sections": [],
+    "longImages": [
+      {
+        "src": "assets/longform/city.png",
+        "width": 1536,
+        "height": 2048
+      }
+    ],
+    "cover": "assets/catalog/city.jpg"
+  },
+  {
+    "id": "zegl",
+    "title": "ZEGL 首饰 AI 网站",
+    "subtitle": "AI 首饰设计与创作",
+    "category": "visual",
+    "sections": [],
+    "longImages": [
+      {
+        "src": "assets/longform/zegl.png",
+        "width": 440,
+        "height": 2048
+      }
+    ],
+    "cover": "assets/catalog/zegl.jpg"
+  },
+  {
+    "id": "socks",
+    "title": "诸暨 AI 袜子选款网站",
+    "subtitle": "袜业选款与设计平台",
+    "category": "visual",
+    "sections": [],
+    "longImages": [
+      {
+        "src": "assets/longform/socks.png",
+        "width": 476,
+        "height": 2048
+      }
+    ],
+    "cover": "assets/catalog/socks.jpg"
+  },
+  {
+    "id": "beiji",
+    "title": "贝吉三折页",
+    "subtitle": "企业三折页视觉",
+    "category": "visual",
+    "sections": [],
+    "longImages": [
+      {
+        "src": "assets/longform/beiji.png",
+        "width": 455,
+        "height": 2048
+      }
+    ],
+    "cover": "assets/catalog/beiji.jpg"
   }
 ];
