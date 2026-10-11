@@ -168,6 +168,7 @@ try {
  resize();host.classList.add('motion-ready');toggle.hidden=false;
  setRunning(running);requestAnimationFrame(loop);
 }catch(error){
+ host.classList.remove('motion-ready');toggle.hidden=true;
  console.warn('Glass cover fallback:',error);
  if(renderer)renderer.dispose();
 }
