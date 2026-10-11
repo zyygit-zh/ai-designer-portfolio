@@ -4,7 +4,7 @@ const gallery=document.querySelector('#gallery'),galleryRange=document.querySele
 let filter='visual',currentProject=null,currentImages=[],imageIndex=0,lastTrigger=null;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function catalogProjects(){
- const order=filter==='video'?['princess','emotion','product','character','clothing']:['orbit','launch','still','weekend','between','form','nova','pawpal','city','zegl','socks','beiji','clothing','character-design'];
+ const order=filter==='video'?['princess','emotion','product','character','clothing']:['orbit','launch','still','weekend','between','form','nova','pawpal','city','zegl','socks','beiji'];
  return order.map(id=>projects.find(p=>p.id===id)).filter(Boolean);
 }
 function renderGallery(){

@@ -452,9 +452,9 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/orbit.png",
-        "width": 269,
-        "height": 2048
+        "src": "assets/longform/orbit.png?v=original-7",
+        "width": 1230,
+        "height": 9360
       }
     ]
   },
@@ -467,9 +467,9 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/launch.png",
-        "width": 833,
-        "height": 2048
+        "src": "assets/longform/launch.png?v=original-7",
+        "width": 1672,
+        "height": 4110
       }
     ]
   },
@@ -482,9 +482,9 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/still.png",
-        "width": 361,
-        "height": 2048
+        "src": "assets/longform/still.png?v=original-7",
+        "width": 1536,
+        "height": 8713
       }
     ]
   },
@@ -497,9 +497,9 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/weekend.png",
-        "width": 402,
-        "height": 2048
+        "src": "assets/longform/weekend.png?v=original-7",
+        "width": 1536,
+        "height": 7809
       }
     ]
   },
@@ -512,9 +512,9 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/between.png",
-        "width": 768,
-        "height": 2048
+        "src": "assets/longform/between.png?v=original-7",
+        "width": 1536,
+        "height": 4096
       }
     ]
   },
@@ -527,9 +527,9 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/jewelry.png",
-        "width": 481,
-        "height": 2048
+        "src": "assets/longform/jewelry.png?v=original-7",
+        "width": 1536,
+        "height": 6530
       }
     ]
   },
@@ -541,9 +541,9 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/nova.png",
-        "width": 234,
-        "height": 2048
+        "src": "assets/longform/nova.png?v=original-7",
+        "width": 1024,
+        "height": 8960
       }
     ],
     "cover": "assets/catalog/nova.jpg"
@@ -556,9 +556,9 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/pawpal.png",
-        "width": 683,
-        "height": 2048
+        "src": "assets/longform/pawpal.png?v=original-7",
+        "width": 1024,
+        "height": 3069
       }
     ],
     "cover": "assets/catalog/pawpal.jpg"
@@ -571,7 +571,7 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/city.png",
+        "src": "assets/longform/city.png?v=original-7",
         "width": 1536,
         "height": 2048
       }
@@ -586,9 +586,9 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/zegl.png",
-        "width": 440,
-        "height": 2048
+        "src": "assets/longform/zegl.png?v=original-7",
+        "width": 1920,
+        "height": 8933
       }
     ],
     "cover": "assets/catalog/zegl.jpg"
@@ -601,9 +601,9 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/socks.png",
-        "width": 476,
-        "height": 2048
+        "src": "assets/longform/socks.png?v=original-7",
+        "width": 1280,
+        "height": 5496
       }
     ],
     "cover": "assets/catalog/socks.jpg"
@@ -616,9 +616,9 @@ window.portfolioProjects=[
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/beiji.png",
-        "width": 455,
-        "height": 2048
+        "src": "assets/longform/beiji.png?v=original-7",
+        "width": 1527,
+        "height": 6872
       }
     ],
     "cover": "assets/catalog/beiji.jpg"
