@@ -4,10 +4,10 @@ window.portfolioProjects=[
     "title": "童装 AI 换装",
     "subtitle": "服装参考与系列视觉",
     "category": "commerce",
-    "label": "电商视觉 · 已提供项目素材",
+    "label": "电商视觉",
     "cover": "assets/catalog/clothing-video-cover.jpg",
     "summary": "以商品款式为参考，探索童装换装、人物动作与场景效果。固定的场景与接近的光线帮助多款素材建立统一的视觉表达。",
-    "role": "AI 换装与虚拟童模动态视频流程，批量视觉素材制作。职责按简历整理。",
+    "role": "AI 换装与虚拟童模动态视频流程，批量视觉素材制作。",
     "scope": "商品参考、换装效果、动态展示",
     "sections": [
       {
@@ -82,17 +82,16 @@ window.portfolioProjects=[
         "黄色外套动态展示",
         "assets/film-1-1.webp"
       ]
-    ],
-    "note": "图片取自《太阳雪人换装效果.xlsx》，对照依据服装的视觉特征整理。文件标题与简历中的品牌对应关系尚未确认，因此以中性项目名称展示。"
+    ]
   },
   {
     "id": "princess",
     "title": "《公主请自重》",
     "subtitle": "互动短剧视觉技术美术",
     "category": "film",
-    "label": "影视视觉 · 简历项目",
+    "label": "影视视觉",
     "cover": "assets/film-2-2.webp",
-    "summary": "参与 AI 互动短剧的视觉技术美术工作，制作人物、场景与动态片段，并进行画面修图和调色。展示图取自所提供的成片。",
+    "summary": "参与 AI 互动短剧的视觉技术美术工作，制作人物、场景与动态片段，并进行画面修图和调色。",
     "role": "AIGC 人物、场景、动态片段生成，画面修图与调色。",
     "scope": "人物、场景、视频视觉素材",
     "sections": [
@@ -148,7 +147,6 @@ window.portfolioProjects=[
         "assets/film-2-2.webp"
       ]
     ],
-    "note": "芒果 TV 合作项目关系与个人职责按本人简历整理。成片关键帧用于项目展示，完整成片包含团队其他环节的工作。",
     "productionImages": [
       {
         "src": "assets/production/princess-node-map.png",
@@ -164,7 +162,7 @@ window.portfolioProjects=[
     "title": "五粮液广告视觉作品",
     "subtitle": "产品质感与场景表达",
     "category": "commerce",
-    "label": "产品广告 · 已提供作品",
+    "label": "产品广告",
     "cover": "assets/film-4-3.webp",
     "summary": "通过瓶身细节、草地场景、运动意象与产品阵列组织广告画面。关注玻璃质感、标签清晰度和产品比例。",
     "role": "AI 视觉生成与画面精修。",
@@ -209,15 +207,14 @@ window.portfolioProjects=[
         "产品广告作品 · 约 27 秒",
         "assets/film-4-3.webp"
       ]
-    ],
-    "note": "个人职责已由本人确认为视觉生成与精修。此处按作品展示，未作品牌委托、商业投放或独立完成全部成片的声明。"
+    ]
   },
   {
     "id": "emotion",
     "title": "《情绪交易》",
     "subtitle": "科幻叙事与人物视觉",
     "category": "film",
-    "label": "科幻视觉 · 已提供作品",
+    "label": "科幻视觉",
     "cover": "assets/film-3-5.webp",
     "summary": "以人物的发色、服装、颈部装置和发光细节建立识别线索。冷色城市、暗部人物与屏幕光线共同塑造科幻氛围。",
     "role": "AI 视觉生成与画面精修。",
@@ -276,15 +273,14 @@ window.portfolioProjects=[
         "《情绪交易》作品片段 · 约 2 分 36 秒",
         "assets/film-3-2.webp"
       ]
-    ],
-    "note": "个人职责已由本人确认为视觉生成与精修。主题与视觉说明依据原片画面整理，未添加未提供的导演、编剧或商业合作信息。"
+    ]
   },
   {
     "id": "character",
     "title": "角色展示",
     "subtitle": "人物质感与动态细节",
     "category": "film",
-    "label": "角色视觉 · 已提供作品",
+    "label": "角色视觉",
     "cover": "assets/film-5-3.webp",
     "summary": "通过面部、服饰和细节特写呈现角色风格。白色发丝、金属装饰与发光细节共同建立视觉特征。",
     "role": "AI 视觉生成与画面精修。",
@@ -315,15 +311,14 @@ window.portfolioProjects=[
         "角色展示视频 · 约 37 秒",
         "assets/film-5-3.webp"
       ]
-    ],
-    "note": "视频来自本人提供的《角色展示视频-卡点.mp4》。个人职责为视觉生成与精修。"
+    ]
   },
   {
     "id": "character-design",
     "title": "角色设定与三视图",
     "subtitle": "人物设定 · 版本探索",
     "category": "film",
-    "label": "角色设计 · 已提供作品",
+    "label": "角色设计",
     "cover": "assets/characters/character-2.png",
     "summary": "以角色设定板展示人物形象、服装细节与多角度设计，保留不同版本的探索过程。",
     "role": "角色设定作品展示。",
@@ -449,8 +444,7 @@ window.portfolioProjects=[
           ]
         ]
       }
-    ],
-    "note": "展示本人提供的角色设定板。"
+    ]
   },
   {
     "id": "orbit",
