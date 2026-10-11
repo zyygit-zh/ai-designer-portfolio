@@ -5,7 +5,7 @@ window.portfolioProjects=[
     "subtitle": "服装参考与系列视觉",
     "category": "commerce",
     "label": "电商视觉 · 已提供项目素材",
-    "cover": "assets/clothing-26.webp",
+    "cover": "assets/catalog/clothing-video-cover.jpg",
     "summary": "以商品款式为参考，探索童装换装、人物动作与场景效果。固定的场景与接近的光线帮助多款素材建立统一的视觉表达。",
     "role": "AI 换装与虚拟童模动态视频流程，批量视觉素材制作。职责按简历整理。",
     "scope": "商品参考、换装效果、动态展示",
