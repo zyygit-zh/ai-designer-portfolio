@@ -22,3 +22,17 @@
 .longform-tool .tool-credit{padding:6px 12px;border:1px solid #c2ef9b50;border-radius:20px;background:#c2ef9b14;color:#c2ef9b;font-size:12px}
 .longform-tool img{border-radius:10px}
 @media(max-width:800px){.longform-tool{padding:24px 12px}.longform-tool figcaption{font-size:18px;margin-bottom:16px}.longform-tool .tool-credit{font-size:11px}}
+
+/* Skills overview */
+.skills-section{padding:100px 5vw;background:radial-gradient(ellipse at 15% 5%,#91bd5320,transparent 58%),linear-gradient(120deg,#0e1410,#0b0e0c 65%,#111713);border-top:1px solid #c2ef9b18}
+.skills-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:46px}
+.skills-heading .eyebrow{color:#c2ef9b;margin-bottom:20px}
+.skills-heading h2{font-size:clamp(40px,5.4vw,82px);font-weight:550;line-height:1.15;letter-spacing:-.05em;color:#f1f5ee}
+.skills-heading>p{max-width:390px;margin:0 0 7px;color:#aeb9a8;font-size:14px;line-height:1.9}
+.skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.skill-card{min-width:0;padding:28px 26px 30px;border:1px solid #c2ef9b26;border-radius:18px;background:linear-gradient(135deg,#d7edbe0b,#d7edbe03);backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 #ffffff05}
+.skill-number{display:block;font-size:10px;line-height:1.5;letter-spacing:.12em;color:#acc591;margin-bottom:20px}
+.skill-card h3{margin:0 0 17px;font-size:22px;line-height:1.5;font-weight:500;color:#edf4e7}
+.skill-card p{margin:0;color:#b3bcad;font-size:14px;line-height:2;overflow-wrap:anywhere}
+@media(min-width:801px) and (max-width:1100px){.skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.skills-section{padding:64px 5vw}.skills-heading{display:block;margin-bottom:30px}.skills-heading>p{margin:20px 0 0;font-size:13px}.skills-grid{grid-template-columns:1fr;gap:14px}.skill-card{padding:24px;border-radius:16px}.skill-number{margin-bottom:14px}.skill-card h3{font-size:20px;margin-bottom:12px}.skill-card p{font-size:13px}}
