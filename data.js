@@ -447,47 +447,50 @@ window.portfolioProjects=[
     ]
   },
   {
-    "id": "orbit",
-    "title": "ORBIT 欧巡",
-    "subtitle": "巡逻机器人产品品牌",
-    "category": "concept",
-    "cover": "assets/orbit.webp",
+    "id": "double11-gifts",
+    "title": "双11会员狂欢 · 礼盒主题",
+    "subtitle": "天猫精灵超级会员 · 活动页面设计",
+    "category": "visual",
+    "label": "平面视觉",
+    "cover": "assets/catalog/double11-gifts.webp",
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/orbit.png?v=original-7",
-        "width": 1230,
-        "height": 9360
+        "src": "assets/longform/double11-gifts.png",
+        "width": 2500,
+        "height": 13784
       }
     ]
   },
   {
-    "id": "launch",
-    "title": "智巡未来",
-    "subtitle": "机器人产品发布会",
-    "category": "concept",
-    "cover": "assets/launch.webp",
+    "id": "double11-pink",
+    "title": "双11会员狂欢 · 粉色主题",
+    "subtitle": "天猫精灵超级会员 · 活动页面设计",
+    "category": "visual",
+    "label": "平面视觉",
+    "cover": "assets/catalog/double11-pink.webp",
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/launch.png?v=original-7",
-        "width": 1672,
-        "height": 4110
+        "src": "assets/longform/double11-pink.png",
+        "width": 1125,
+        "height": 7578
       }
     ]
   },
   {
-    "id": "still",
-    "title": "STILL 间息",
-    "subtitle": "香氛品牌与包装",
-    "category": "concept",
-    "cover": "assets/still.webp",
+    "id": "double11-type",
+    "title": "双11会员狂欢 · 字体主题",
+    "subtitle": "天猫精灵超级会员 · 活动页面设计",
+    "category": "visual",
+    "label": "平面视觉",
+    "cover": "assets/catalog/double11-type.webp",
     "sections": [],
     "longImages": [
       {
-        "src": "assets/longform/still.png?v=original-7",
-        "width": 1536,
-        "height": 8713
+        "src": "assets/longform/double11-type.png",
+        "width": 5640,
+        "height": 3760
       }
     ]
   },
