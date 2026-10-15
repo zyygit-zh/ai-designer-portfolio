@@ -510,21 +510,6 @@ window.portfolioProjects=[
     ]
   },
   {
-    "id": "between",
-    "title": "街间 BETWEEN",
-    "subtitle": "刊物与编辑设计",
-    "category": "concept",
-    "cover": "assets/between.webp",
-    "sections": [],
-    "longImages": [
-      {
-        "src": "assets/longform/between.png?v=original-7",
-        "width": 1536,
-        "height": 4096
-      }
-    ]
-  },
-  {
     "id": "form",
     "title": "珠宝灵感",
     "subtitle": "首饰 AI 创作界面",
