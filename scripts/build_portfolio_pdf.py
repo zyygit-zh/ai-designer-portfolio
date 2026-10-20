@@ -8,7 +8,8 @@ from reportlab.lib.colors import HexColor
 from reportlab.lib.utils import ImageReader
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'downloads/portfolio.pdf'
+OUT=Path(os.environ.get('PDF_OUTPUT',str(ROOT/'downloads/portfolio.pdf')))
+OUT.parent.mkdir(parents=True,exist_ok=True)
 W,H=1440,1018
 M=56
 BG='#0a0d0b'; PANEL='#111a13'; GREEN='#c2ef9b'; WHITE='#edf4e7'; MUTED='#aeb9a8'; LINE='#33412c'
@@ -19,7 +20,7 @@ pdfmetrics.registerFont(TTFont('ENB',r'C:\Windows\Fonts\arialbd.ttf'))
 raw=(ROOT/'data.js').read_text(encoding='utf-8')
 data=json.loads(raw.split('=',1)[1].strip().rstrip(';'))
 projects={p['id']:p for p in data}
-visual=['orbit','launch','still','weekend','between','form','nova','pawpal','city','zegl','socks','beiji']
+visual=['double11-gifts','double11-pink','double11-type','weekend','form','nova','pawpal','city','zegl','socks','beiji']
 video=['princess','emotion','product','character','clothing']
 site_html=(ROOT/'index.html').read_text(encoding='utf-8')
 skills=[]
@@ -30,11 +31,10 @@ def src(path): return ROOT/path.split('?')[0]
 # Each graphic project is curated into one spread. These ranges select whole
 # compositions or screen groups rather than paginating the original longboard.
 selections={
- 'orbit':[(0,1290),(7725,9360)],
- 'launch':[(0,2080),(2080,4110)],
- 'still':[(0,2050),(6400,8713)],
+ 'double11-gifts':[(0,1800),(2375,8350)],
+ 'double11-pink':[(0,820),(1105,3550)],
+ 'double11-type':[(0,3760)],
  'weekend':[(0,1040),(6640,7680)],
- 'between':[(0,1540),(3070,4096)],
  'form':[(890,2570),(2570,4630)],
  'nova':[(0,1500),(7558,8960)],
  'pawpal':[(0,1540),(2320,3069)],
@@ -44,8 +44,8 @@ selections={
  'beiji':[(0,2575),(4715,6872)],
 }
 starts={id:idx+3 for idx,id in enumerate(visual)}
-starts.update({'princess':15,'emotion':17,'product':18,'character':19,'clothing':20})
-TOTAL=21
+starts.update({'princess':14,'emotion':16,'product':17,'character':18,'clothing':19})
+TOTAL=20
 c=canvas.Canvas(str(OUT),pagesize=(W,H),pageCompression=1)
 c.setTitle('朱雨雨 | AI / VISUAL DESIGNER | 精选作品集 2026')
 c.setAuthor('朱雨雨');c.setSubject('精选平面视觉设计、AI 视频制作、技能与工具')
@@ -163,7 +163,7 @@ for idx,id in enumerate(video):
  text(p['title'],x+12,y+97,16,WHITE)
  text(f'P.{starts[id]:02d}',x+cardw-46,y+121,10,GREEN,'EN')
  c.linkRect('',id,(x,H-y-cardh,x+cardw,H-y),relative=0,thickness=0)
-text('技能与工具 / 联系   P.21',W-M-241,937,15,MUTED)
+text('技能与工具 / 联系   P.20',W-M-241,937,15,MUTED)
 c.linkRect('','skills',(W-M-245,H-959,W-M,H-929),relative=0,thickness=0)
 end()
 
@@ -247,3 +247,4 @@ c.save()
 qa=Path(os.environ.get('PDF_QA_DIR',str(ROOT/'tmp/pdfs')));qa.mkdir(parents=True,exist_ok=True)
 (qa/'manifest.json').write_text(json.dumps({'pages':TOTAL,'starts':starts,'pageManifest':manifest,'selections':selections,'placements':placements},ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps({'pages':TOTAL,'bytes':OUT.stat().st_size,'output':str(OUT)},ensure_ascii=False))
+
