@@ -621,5 +621,21 @@ window.portfolioProjects=[
       }
     ],
     "cover": "assets/catalog/beiji.jpg"
+  },
+  {
+    "id": "guofeng",
+    "title": "《国风意境》",
+    "subtitle": "国风美学 · 意境影像",
+    "category": "film",
+    "label": "AI 视频",
+    "cover": "assets/catalog/guofeng.jpg",
+    "sections": [],
+    "videos": [
+      [
+        "videos/guofeng.mp4",
+        "《国风意境》 · 约 52 秒",
+        "assets/catalog/guofeng.jpg"
+      ]
+    ]
   }
 ];
