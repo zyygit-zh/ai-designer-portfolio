@@ -133,3 +133,4 @@
 .media-videos{min-height:100%;display:grid;align-content:center;gap:20px;padding:70px 0 30px}
 .media-videos video{display:block;width:100%;max-height:75vh;background:#000}
 @media(max-width:800px){#project-dialog{width:96vw;height:fit-content;max-height:94dvh;border-radius:10px}#project-dialog #close-project{right:10px;top:10px;font-size:12px;min-height:36px;padding:7px 12px}.media-videos{padding-top:60px}}
+.catalog .filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;gap:12px}.catalog .filters button{min-width:0;padding:17px 14px;gap:10px;font-size:18px}.catalog-gallery>p{padding:40px;color:#b9c9b0}@media(max-width:1000px){.catalog .filters{grid-template-columns:repeat(2,minmax(0,1fr))}}

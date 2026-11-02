@@ -4,23 +4,23 @@ const gallery=document.querySelector('#gallery'),galleryRange=document.querySele
 let filter='visual',currentProject=null,currentImages=[],imageIndex=0,lastTrigger=null;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function catalogProjects(){
- const order=filter==='video'?['princess','emotion','product','character','clothing','guofeng']:['double11-gifts','double11-pink','double11-type','weekend','form','nova','pawpal','city','zegl','socks','beiji'];
+ const order=filter==='ip'?[]:filter==='model'?['blender-kitchen','blender-street']:filter==='video'?['princess','emotion','product','character','clothing','guofeng']:['double11-gifts','double11-pink','double11-type','weekend','form','nova','pawpal','city','zegl','socks','beiji'];
  return order.map(id=>projects.find(p=>p.id===id)).filter(Boolean);
 }
 function renderGallery(){
  const list=catalogProjects(),video=filter==='video';
- document.querySelector('#catalog-type').textContent=video?'AI VIDEO PRODUCTION':'GRAPHIC & VISUAL DESIGN';
- gallery.setAttribute('aria-label',video?'AI 视频制作项目目录':'平面视觉设计项目目录');
+ document.querySelector('#catalog-type').textContent=({ip:'BLIND BOX IP DESIGN',model:'3D MODELING'})[filter]||(video?'AI VIDEO PRODUCTION':'GRAPHIC & VISUAL DESIGN');
+ gallery.setAttribute('aria-label',({ip:'盲盒 IP 制作项目目录',model:'3D 建模项目目录'})[filter]||(video?'AI 视频制作项目目录':'平面视觉设计项目目录'));
  gallery.innerHTML=list.map((p,i)=>`<button class="work catalog-card" data-project="${p.id}" ${video?'data-mode="video"':''} aria-label="查看${esc(p.title)}${video?'视频':''}" style="--card-angle:${[-7,-2,6,-5,4,-3,6,-4][i%8]}deg;--card-offset:${[20,0,27,9,23,3,18,7][i%8]}px">
  <div class="catalog-card-top"><span class="catalog-card-number">${String(i+1).padStart(2,'0')}</span>${video?'<span class="catalog-card-label">AI VIDEO</span>':''}</div>
  <h3>${esc(p.title)}</h3><p class="catalog-card-subtitle">${esc(video?p.id==='clothing'?'虚拟童模 · 动态换装':p.subtitle:p.subtitle)}</p>
  <div class="catalog-thumbnail"><img src="${p.cover}" alt="${esc(p.title+'作品预览')}" draggable="false" ${i>3?'loading="lazy"':''}>${video?'<span class="catalog-play" aria-hidden="true">▶</span>':''}</div>
  <span class="catalog-card-bottom">${video?'观看作品':'进入项目'} <span aria-hidden="true">↗</span></span>
  </button>`).join('');
- gallery.scrollLeft=0;updateStatus();
+ if(!list.length){gallery.innerHTML='<p>盲盒 IP 作品整理中，敬请期待。</p>';document.querySelector('#gallery-status').textContent='00 / 00';galleryRange.disabled=true;galleryRange.value='0';}gallery.scrollLeft=0;updateStatus();
 }
 function updateStatus(){
- const cards=[...gallery.children];if(!cards.length)return;
+ const cards=[...gallery.querySelectorAll('.catalog-card')];if(!cards.length)return;
  let closest=0,min=Infinity;const edge=gallery.getBoundingClientRect().left+gallery.clientWidth*.05;
  cards.forEach((c,i)=>{const d=Math.abs(c.getBoundingClientRect().left-edge);if(d<min){min=d;closest=i}});
  document.querySelector('#gallery-status').textContent=`${String(closest+1).padStart(2,'0')} / ${String(cards.length).padStart(2,'0')}`;

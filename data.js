@@ -639,3 +639,5 @@ window.portfolioProjects=[
     ]
   }
 ];
+window.portfolioProjects.push(...[{id:'blender-kitchen',title:'复古厨房 · 室内场景',subtitle:'Blender 建模 · 彩色与白模对照',cover:'assets/blender-kitchen.png',sections:[{images:[['assets/blender-kitchen.png','复古厨房 · 彩色与白模对照']]}]},{id:'blender-street',title:'街巷 · 室外场景',subtitle:'Blender 建模 · 彩色与白模对照',cover:'assets/blender-street.png',sections:[{images:[['assets/blender-street.png','街巷 · 彩色与白模对照']]}]}]);
+
