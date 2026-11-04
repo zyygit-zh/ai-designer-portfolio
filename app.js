@@ -4,7 +4,7 @@ const gallery=document.querySelector('#gallery'),galleryRange=document.querySele
 let filter='visual',currentProject=null,currentImages=[],imageIndex=0,lastTrigger=null;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function catalogProjects(){
- const order=filter==='ip'?[]:filter==='model'?['blender-kitchen','blender-street']:filter==='video'?['princess','emotion','product','character','clothing','guofeng']:['white-background','garment-details','kids-styling','double11-gifts','double11-pink','double11-type','weekend','form','nova','pawpal','city','zegl','socks','beiji'];
+ const order=filter==='ip'?[]:filter==='model'?['blender-kitchen','blender-street']:filter==='video'?['princess','emotion','product','character','clothing','guofeng']:['garment-details','kids-styling','double11-gifts','double11-pink','double11-type','weekend','form','nova','pawpal','city','zegl','socks','beiji'];
  return order.map(id=>projects.find(p=>p.id===id)).filter(Boolean);
 }
 function renderGallery(){
@@ -58,6 +58,7 @@ function syncRoute(){
  if(location.hash.startsWith('#project/')){
   let parts;try{parts=location.hash.slice(9).split('/').map(decodeURIComponent)}catch{return}
   const [id,mode]=parts;
+  if(id==='garment-details'||id==='white-background'){closeProject();document.querySelector('#works').scrollIntoView();return;}
   if(projects.some(p=>p.id===id)&&parts.length<=2&&(!mode||mode==='video')){
    if(mode==='video'&&filter!=='video'){
     filter='video';document.querySelectorAll('[data-filter]').forEach(b=>{const active=b.dataset.filter===filter;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});renderGallery();
@@ -67,7 +68,7 @@ function syncRoute(){
  }else if(dialog.open)closeProject();
 }
 function showImage(i){if(!currentImages.length)return;imageIndex=(i+currentImages.length)%currentImages.length;const item=currentImages[imageIndex];const image=document.querySelector('#lightbox-image');image.src=item.src;image.alt=item.caption;document.querySelector('#lightbox-caption').textContent=item.caption;document.querySelector('#lightbox-index').textContent=`${imageIndex+1} / ${currentImages.length}`;if(!lightbox.open)lightbox.showModal();}
-document.addEventListener('click',e=>{const project=e.target.closest('[data-project]');if(project){lastTrigger=project;const hash='#project/'+project.dataset.project+(project.dataset.mode==='video'?'/video':'');if(location.hash===hash)showProject(project.dataset.project,project.dataset.mode==='video');else location.hash=hash}const image=e.target.closest('[data-image]');if(image)showImage(Number(image.dataset.image));});
+document.addEventListener('click',e=>{const project=e.target.closest('[data-project]');if(project){if((project.dataset.project==='garment-details'||project.dataset.project==='white-background')){e.preventDefault();location.assign('garment-case.html');return;}lastTrigger=project;const hash='#project/'+project.dataset.project+(project.dataset.mode==='video'?'/video':'');if(location.hash===hash)showProject(project.dataset.project,project.dataset.mode==='video');else location.hash=hash}const image=e.target.closest('[data-image]');if(image)showImage(Number(image.dataset.image));});
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button))});renderGallery();}));
 gallery.addEventListener('scroll',updateStatus,{passive:true});
 window.addEventListener('resize',updateStatus);

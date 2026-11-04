@@ -1,12 +1,15 @@
 'use strict';
 window.renderGarmentCase = function () {
  const base='assets/garment/';
+ const labels=['撞色滚边大衣','连帽短款羽绒服','翻袖单排扣西装','提花半裙','深色长款大衣','长款羽绒服','灰色双排扣西装','黑色双排扣西装'];
+ const comparisons=labels.map((title,i)=>({id:'white-'+(i+1),title,before:'assets/process/white-'+(i+1)+'-before.webp',after:'assets/process/white-'+(i+1)+'-after.webp'})).concat([{id:'blazer',title:'白色系带外套',before:base+'blazer-before.webp',after:base+'blazer-white.webp'},{id:'coat',title:'深灰色长款大衣',before:base+'coat-before.webp',after:base+'coat-gray.webp'}]);
+ const compareZoom=(src,alt,cls)=>`<a class="gc-zoom ${cls}" href="${src}" target="_blank" rel="noopener" aria-label="放大查看：${alt}"><img src="${src}" alt="${alt}" loading="lazy" decoding="async"><span>查看大图 ↗</span></a>`;
  const photo=(name,alt,cls='')=>`<img class="${cls}" src="${base+name}.webp" alt="${alt}" loading="lazy" decoding="async">`;
  const zoom=(name,alt,cls='')=>`<a class="gc-zoom ${cls}" href="${base+name}.webp" target="_blank" rel="noopener" aria-label="放大查看：${alt}">${photo(name,alt)}<span>查看大图 ↗</span></a>`;
  return `<article class="garment-case">
  <header class="gc-hero">
   <div class="gc-topline"><span>SELECTED WORK / GARMENT</span><span>E-COMMERCE VISUAL</span></div>
-  <p class="gc-kicker">服装商品图制作与标准化</p>
+  <p class="gc-kicker">服装商品视觉</p>
   <h1>从实拍，<br>到商品<span>。</span></h1>
   <div class="gc-hero-bottom"><p>把门店实拍整理为统一、清晰的电商视觉。<br>从服装轮廓、面料细节，到主图与详情的完整交付。</p><span>AI 辅助修图<br>版式设计 / 自动化制作</span></div>
   <div class="gc-hero-art">${photo('blazer-cutout','去人台后的白色系带外套','gc-garment-one')}${photo('coat-cutout','深灰色长款大衣去背素材','gc-garment-two')}<span class="gc-art-index">GARMENT<br>IMAGE SYSTEM</span></div>
@@ -14,8 +17,8 @@ window.renderGarmentCase = function () {
  </header>
  <section class="gc-section gc-compare" aria-labelledby="gc-compare-title">
   <div class="gc-section-head"><span class="gc-num">01 / BEFORE & AFTER</span><h2 id="gc-compare-title">同一件衣服，<br>更清楚地呈现。</h2><p>去除人台与环境干扰，整理衣身和系带轮廓；结合原片核对颜色、领口、袖口与下摆。</p></div>
-  <div class="gc-tabs" role="tablist" aria-label="选择对比款式"><button id="gc-tab-blazer" role="tab" aria-selected="true" aria-controls="gc-compare-blazer" tabindex="0" data-gc-tab="blazer">白色系带外套</button><button id="gc-tab-coat" role="tab" aria-selected="false" aria-controls="gc-compare-coat" tabindex="-1" data-gc-tab="coat">深灰色长款大衣</button></div>
-  ${[['blazer','blazer-before','blazer-white','白色系带外套'],['coat','coat-before','coat-gray','深灰色长款大衣']].map(([id,before,after,title],i)=>`<div id="gc-compare-${id}" class="gc-pair" role="tabpanel" aria-labelledby="gc-tab-${id}" ${i?'hidden':''}><figure><figcaption><b>BEFORE</b><span>门店实拍 / 原始素材</span></figcaption>${zoom(before,title+'门店原始实拍','gc-before')}</figure><figure><figcaption><b>AFTER</b><span>白底主图 / 制作成品</span></figcaption>${zoom(after,title+'白底主图成品','gc-after')}</figure></div>`).join('')}
+  <div class="gc-tabs gc-comparison-tabs" role="tablist" aria-label="选择对比款式">${comparisons.map((item,i)=>`<button id="gc-tab-${item.id}" role="tab" aria-selected="${!i}" aria-controls="gc-compare-${item.id}" tabindex="${i?-1:0}" data-gc-tab="${item.id}">${item.title}</button>`).join('')}</div>
+  ${comparisons.map(({id,before,after,title},i)=>`<div id="gc-compare-${id}" class="gc-pair" role="tabpanel" aria-labelledby="gc-tab-${id}" ${i?'hidden':''}><figure><figcaption><b>BEFORE</b><span>门店实拍 / 原始素材</span></figcaption>${compareZoom(before,title+'门店原始实拍','gc-before')}</figure><figure><figcaption><b>AFTER</b><span>去人台 / 白底商品图</span></figcaption>${compareZoom(after,title+'白底商品图成品','gc-after')}</figure></div>`).join('')}
  </section>
  <section class="gc-section gc-series" aria-labelledby="gc-series-title">
   <div class="gc-section-head"><span class="gc-num">02 / SERIES</span><h2 id="gc-series-title">让不同款色，<br>保持同一种秩序。</h2><p>统一字标、画布、衣身占比与上下留白。按款号、颜色整理输出，使成套商品图保持连贯。</p></div>
@@ -39,5 +42,5 @@ function selectGarmentTab(root,id,focus=false){
  root.querySelectorAll('[role="tabpanel"]').forEach(panel=>{panel.hidden=panel.id!=='gc-compare-'+id;});
 }
 document.addEventListener('click',event=>{const tab=event.target.closest('[data-gc-tab]');if(tab)selectGarmentTab(tab.closest('.garment-case'),tab.dataset.gcTab);});
-document.addEventListener('keydown',event=>{const tab=event.target.closest('[data-gc-tab]');if(!tab||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const id=event.key==='Home'?'blazer':event.key==='End'?'coat':tab.dataset.gcTab==='blazer'?'coat':'blazer';selectGarmentTab(tab.closest('.garment-case'),id,true);});
+document.addEventListener('keydown',event=>{const tab=event.target.closest('[data-gc-tab]');if(!tab||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const root=tab.closest('.garment-case'),tabs=[...root.querySelectorAll('[data-gc-tab]')],index=tabs.indexOf(tab),next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(index+(event.key==='ArrowLeft'?-1:1)+tabs.length)%tabs.length;selectGarmentTab(root,tabs[next].dataset.gcTab,true);});
 if(document.querySelector('#garment-case-page'))document.querySelector('#garment-case-page').innerHTML=window.renderGarmentCase();
