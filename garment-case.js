@@ -2,7 +2,7 @@
 window.renderGarmentCase = function () {
  const base='assets/garment/';
  const labels=['撞色滚边大衣','连帽短款羽绒服','翻袖单排扣西装','提花半裙','深色长款大衣','长款羽绒服','灰色双排扣西装','黑色双排扣西装'];
- const comparisons=labels.map((title,i)=>({id:'white-'+(i+1),title,before:'assets/process/white-'+(i+1)+'-before.webp',after:'assets/process/white-'+(i+1)+'-after.webp'})).concat([{id:'blazer',title:'白色系带外套',before:base+'blazer-before.webp',after:base+'blazer-white.webp'},{id:'coat',title:'深灰色长款大衣',before:base+'coat-before.webp',after:base+'coat-gray.webp'}]);
+ const comparisons=labels.map((title,i)=>({id:'white-'+(i+1),title,before:'assets/process/white-'+(i+1)+'-before.webp',after:'assets/process/white-'+(i+1)+'-after.webp'}));
  const photo=(name,alt,cls='')=>`<img class="${cls}" src="${base+name}.webp" alt="${alt}" loading="lazy" decoding="async">`;
  const zoom=(name,alt,cls='')=>`<a class="gc-zoom ${cls}" href="${base+name}.webp" target="_blank" rel="noopener" aria-label="放大查看：${alt}">${photo(name,alt)}<span>查看大图 ↗</span></a>`;
  return `<article class="garment-case">
