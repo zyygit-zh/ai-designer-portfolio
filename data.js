@@ -643,3 +643,4 @@ window.portfolioProjects.push(...[{id:'blender-kitchen',title:'复古厨房 · �
 
 
 window.portfolioProjects.push({id:'garment-details',title:'服装商品图制作',subtitle:'实拍转商品 · 主图与详情标准化',category:'visual',cover:'assets/garment/cover.webp',caseStudy:'garment',sections:[]});
+window.portfolioProjects.push({id:'white-background',title:'服装实拍转白底',subtitle:'去人台处理 · 8 组实拍对比',category:'visual',cover:'assets/process/white-cover.webp',caseStudy:'white',sections:[]},{id:'kids-styling',title:'童装同模特换装',subtitle:'白底商品图 · 系列上身效果',category:'visual',cover:'assets/process/kids-cover.webp',caseStudy:'kids',sections:[]});
