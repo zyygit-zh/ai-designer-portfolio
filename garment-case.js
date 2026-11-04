@@ -22,7 +22,7 @@ window.renderGarmentCase = function () {
  </section>
  <section class="gc-section gc-series" aria-labelledby="gc-series-title">
   <div class="gc-section-head"><span class="gc-num">02 / SERIES</span><h2 id="gc-series-title">让不同款色，<br>保持同一种秩序。</h2><p>统一字标、画布、衣身占比与上下留白。按款号、颜色整理输出，使成套商品图保持连贯。</p></div>
-  <div class="gc-series-grid">${[['blazer-white','系带外套 / 白色'],['blazer-black','系带外套 / 黑色'],['coat-gray','长款大衣 / 深灰色'],['coat-black','长款大衣 / 黑色'],['coat-milk','长款大衣 / 奶茶色'],['coat-short','短款大衣 / 驼色']].map(([name,label],i)=>`<figure>${zoom(name,label+'主图成品')}<figcaption><span>${String(i+1).padStart(2,'0')}</span>${label}</figcaption></figure>`).join('')}</div>
+  <div class="gc-series-grid">${[['blazer-white','系带外套 / 白色'],['blazer-black','系带外套 / 黑色'],['coat-gray','长款大衣 / 深灰色'],['coat-black','长款大衣 / 黑色'],['coat-milk','长款大衣 / 奶茶色'],['coat-short','短款大衣 / 驼色']].map(([name,label])=>`<figure>${photo(name,label+'主图成品')}</figure>`).join('')}</div>
  </section>
  <section class="gc-section gc-details" aria-labelledby="gc-details-title">
   <div class="gc-section-head"><span class="gc-num">03 / DETAIL DESIGN</span><h2 id="gc-details-title">整件看版型，<br>近处看质感。</h2><p>按整件展示、局部细节、面料、产品信息和尺码组织阅读顺序。让购买者能顺着画面看清商品。</p></div>
