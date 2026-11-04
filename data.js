@@ -643,4 +643,4 @@ window.portfolioProjects.push(...[{id:'blender-kitchen',title:'复古厨房 · �
 
 
 window.portfolioProjects.push({id:'garment-details',title:'服装商品视觉',subtitle:'实拍转白底 · 主图与详情设计',category:'visual',cover:'assets/garment/cover.webp',caseStudy:'garment',sections:[]});
-window.portfolioProjects.push({id:'kids-styling',title:'童装同模特换装',subtitle:'白底商品图 · 系列上身效果',category:'visual',cover:'assets/process/kids-cover.webp',caseStudy:'kids',sections:[]});
+window.portfolioProjects.push({id:'kids-styling',title:'太阳雪人 · 童装换装',subtitle:'款式平铺与模特上身对照',category:'visual',cover:'assets/sun-snowman/cover.webp',caseStudy:'kids',sections:[]});

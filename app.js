@@ -58,7 +58,7 @@ function syncRoute(){
  if(location.hash.startsWith('#project/')){
   let parts;try{parts=location.hash.slice(9).split('/').map(decodeURIComponent)}catch{return}
   const [id,mode]=parts;
-  if(id==='garment-details'||id==='white-background'){closeProject();document.querySelector('#works').scrollIntoView();return;}
+  if(id==='garment-details'||id==='white-background'||id==='kids-styling'){closeProject();document.querySelector('#works').scrollIntoView();return;}
   if(projects.some(p=>p.id===id)&&parts.length<=2&&(!mode||mode==='video')){
    if(mode==='video'&&filter!=='video'){
     filter='video';document.querySelectorAll('[data-filter]').forEach(b=>{const active=b.dataset.filter===filter;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});renderGallery();
@@ -68,7 +68,7 @@ function syncRoute(){
  }else if(dialog.open)closeProject();
 }
 function showImage(i){if(!currentImages.length)return;imageIndex=(i+currentImages.length)%currentImages.length;const item=currentImages[imageIndex];const image=document.querySelector('#lightbox-image');image.src=item.src;image.alt=item.caption;document.querySelector('#lightbox-caption').textContent=item.caption;document.querySelector('#lightbox-index').textContent=`${imageIndex+1} / ${currentImages.length}`;if(!lightbox.open)lightbox.showModal();}
-document.addEventListener('click',e=>{const project=e.target.closest('[data-project]');if(project){if((project.dataset.project==='garment-details'||project.dataset.project==='white-background')){e.preventDefault();location.assign('garment-case.html');return;}lastTrigger=project;const hash='#project/'+project.dataset.project+(project.dataset.mode==='video'?'/video':'');if(location.hash===hash)showProject(project.dataset.project,project.dataset.mode==='video');else location.hash=hash}const image=e.target.closest('[data-image]');if(image)showImage(Number(image.dataset.image));});
+document.addEventListener('click',e=>{const project=e.target.closest('[data-project]');if(project){if((project.dataset.project==='garment-details'||project.dataset.project==='white-background'||project.dataset.project==='kids-styling')){e.preventDefault();location.assign(project.dataset.project==='kids-styling'?'kids-styling-case.html':'garment-case.html');return;}lastTrigger=project;const hash='#project/'+project.dataset.project+(project.dataset.mode==='video'?'/video':'');if(location.hash===hash)showProject(project.dataset.project,project.dataset.mode==='video');else location.hash=hash}const image=e.target.closest('[data-image]');if(image)showImage(Number(image.dataset.image));});
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button))});renderGallery();}));
 gallery.addEventListener('scroll',updateStatus,{passive:true});
 window.addEventListener('resize',updateStatus);
