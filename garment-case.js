@@ -3,7 +3,6 @@ window.renderGarmentCase = function () {
  const base='assets/garment/';
  const labels=['撞色滚边大衣','连帽短款羽绒服','翻袖单排扣西装','提花半裙','深色长款大衣','长款羽绒服','灰色双排扣西装','黑色双排扣西装'];
  const comparisons=labels.map((title,i)=>({id:'white-'+(i+1),title,before:'assets/process/white-'+(i+1)+'-before.webp',after:'assets/process/white-'+(i+1)+'-after.webp'})).concat([{id:'blazer',title:'白色系带外套',before:base+'blazer-before.webp',after:base+'blazer-white.webp'},{id:'coat',title:'深灰色长款大衣',before:base+'coat-before.webp',after:base+'coat-gray.webp'}]);
- const compareZoom=(src,alt,cls)=>`<a class="gc-zoom ${cls}" href="${src}" target="_blank" rel="noopener" aria-label="放大查看：${alt}"><img src="${src}" alt="${alt}" loading="lazy" decoding="async"><span>查看大图 ↗</span></a>`;
  const photo=(name,alt,cls='')=>`<img class="${cls}" src="${base+name}.webp" alt="${alt}" loading="lazy" decoding="async">`;
  const zoom=(name,alt,cls='')=>`<a class="gc-zoom ${cls}" href="${base+name}.webp" target="_blank" rel="noopener" aria-label="放大查看：${alt}">${photo(name,alt)}<span>查看大图 ↗</span></a>`;
  return `<article class="garment-case">
@@ -17,8 +16,7 @@ window.renderGarmentCase = function () {
  </header>
  <section class="gc-section gc-compare" aria-labelledby="gc-compare-title">
   <div class="gc-section-head"><span class="gc-num">01 / BEFORE & AFTER</span><h2 id="gc-compare-title">同一件衣服，<br>更清楚地呈现。</h2><p>去除人台与环境干扰，整理衣身和系带轮廓；结合原片核对颜色、领口、袖口与下摆。</p></div>
-  <div class="gc-tabs gc-comparison-tabs" role="tablist" aria-label="选择对比款式">${comparisons.map((item,i)=>`<button id="gc-tab-${item.id}" role="tab" aria-selected="${!i}" aria-controls="gc-compare-${item.id}" tabindex="${i?-1:0}" data-gc-tab="${item.id}">${item.title}</button>`).join('')}</div>
-  ${comparisons.map(({id,before,after,title},i)=>`<div id="gc-compare-${id}" class="gc-pair" role="tabpanel" aria-labelledby="gc-tab-${id}" ${i?'hidden':''}><figure><figcaption><b>BEFORE</b><span>门店实拍 / 原始素材</span></figcaption>${compareZoom(before,title+'门店原始实拍','gc-before')}</figure><figure><figcaption><b>AFTER</b><span>去人台 / 白底商品图</span></figcaption>${compareZoom(after,title+'白底商品图成品','gc-after')}</figure></div>`).join('')}
+  <div class="gc-comparison-grid">${comparisons.map(({before,after,title})=>`<div class="gc-pair"><figure><figcaption><b>BEFORE</b></figcaption><div class="gc-photo gc-before"><img src="${before}" alt="${title}门店原始实拍" loading="lazy" decoding="async"></div></figure><figure><figcaption><b>AFTER</b></figcaption><div class="gc-photo gc-after"><img src="${after}" alt="${title}白底商品图成品" loading="lazy" decoding="async"></div></figure></div>`).join('')}</div>
  </section>
  <section class="gc-section gc-series" aria-labelledby="gc-series-title">
   <div class="gc-section-head"><span class="gc-num">02 / SERIES</span><h2 id="gc-series-title">让不同款色，<br>保持同一种秩序。</h2><p>统一字标、画布、衣身占比与上下留白。按款号、颜色整理输出，使成套商品图保持连贯。</p></div>
@@ -37,10 +35,4 @@ window.renderGarmentCase = function () {
  <footer class="gc-footer"><span>朱雨雨 / AI VISUAL DESIGNER</span><span>服装商品图案例 · 2026</span></footer>
  </article>`;
 };
-function selectGarmentTab(root,id,focus=false){
- root.querySelectorAll('[data-gc-tab]').forEach(button=>{const on=button.dataset.gcTab===id;button.setAttribute('aria-selected',String(on));button.tabIndex=on?0:-1;if(on&&focus)button.focus();});
- root.querySelectorAll('[role="tabpanel"]').forEach(panel=>{panel.hidden=panel.id!=='gc-compare-'+id;});
-}
-document.addEventListener('click',event=>{const tab=event.target.closest('[data-gc-tab]');if(tab)selectGarmentTab(tab.closest('.garment-case'),tab.dataset.gcTab);});
-document.addEventListener('keydown',event=>{const tab=event.target.closest('[data-gc-tab]');if(!tab||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const root=tab.closest('.garment-case'),tabs=[...root.querySelectorAll('[data-gc-tab]')],index=tabs.indexOf(tab),next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(index+(event.key==='ArrowLeft'?-1:1)+tabs.length)%tabs.length;selectGarmentTab(root,tabs[next].dataset.gcTab,true);});
 if(document.querySelector('#garment-case-page'))document.querySelector('#garment-case-page').innerHTML=window.renderGarmentCase();
