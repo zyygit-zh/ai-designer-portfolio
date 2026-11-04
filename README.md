@@ -9,3 +9,5 @@
 真实项目与 AI 辅助概念练习分别标注。提交 main 后由 GitHub Pages 自动发布。
 
 2026-11-04：新增「服装商品图制作」案例，含实拍与主图对比、多色系列、可展开详情长图及模板标准。独立案例页：`garment-case.html`；内容：`garment-case.js`；样式：`garment-case.css`。
+
+2026-11-04：新增「服装实拍转白底」与「童装同模特换装」两个案例，首页按实拍处理、商品设计、模特上身串联全流程。独立页面：`white-image-case.html`、`kids-styling-case.html`；共用展示：`commerce-cases.js`、`commerce-cases.css`。
