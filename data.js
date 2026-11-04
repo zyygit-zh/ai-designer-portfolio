@@ -641,3 +641,5 @@ window.portfolioProjects=[
 ];
 window.portfolioProjects.push(...[{id:'blender-kitchen',title:'复古厨房 · 室内场景',subtitle:'Blender 建模 · 彩色与白模对照',cover:'assets/blender-kitchen.png',sections:[{images:[['assets/blender-kitchen.png','复古厨房 · 彩色与白模对照']]}]},{id:'blender-street',title:'街巷 · 室外场景',subtitle:'Blender 建模 · 彩色与白模对照',cover:'assets/blender-street.png',sections:[{images:[['assets/blender-street.png','街巷 · 彩色与白模对照']]}]}]);
 
+
+window.portfolioProjects.push({id:'garment-details',title:'服装商品图制作',subtitle:'实拍转商品 · 主图与详情标准化',category:'visual',cover:'assets/garment/cover.webp',caseStudy:'garment',sections:[]});

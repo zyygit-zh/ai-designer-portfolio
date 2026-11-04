@@ -4,7 +4,7 @@ const gallery=document.querySelector('#gallery'),galleryRange=document.querySele
 let filter='visual',currentProject=null,currentImages=[],imageIndex=0,lastTrigger=null;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function catalogProjects(){
- const order=filter==='ip'?[]:filter==='model'?['blender-kitchen','blender-street']:filter==='video'?['princess','emotion','product','character','clothing','guofeng']:['double11-gifts','double11-pink','double11-type','weekend','form','nova','pawpal','city','zegl','socks','beiji'];
+ const order=filter==='ip'?[]:filter==='model'?['blender-kitchen','blender-street']:filter==='video'?['princess','emotion','product','character','clothing','guofeng']:['garment-details','double11-gifts','double11-pink','double11-type','weekend','form','nova','pawpal','city','zegl','socks','beiji'];
  return order.map(id=>projects.find(p=>p.id===id)).filter(Boolean);
 }
 function renderGallery(){
@@ -48,7 +48,7 @@ function showProject(id,videoFirst=false){
  }).join('');
  const videos=(p.videos||[]).map(([src,title,poster])=>`<video controls playsinline preload="none" poster="${poster}" src="${src}" aria-label="${esc(title)}"></video>`).join('');
  const production=(p.productionImages||[]).map(({src,width,height,alt})=>`<a class="production-image" href="${src}" target="_blank" rel="noopener" aria-label="查看${esc(p.title)}制作过程原图"><img src="${src}" alt="${esc(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async"></a>`).join('');
- const content=production?`<div class="video-project"><section class="production-section" aria-label="制作过程"><div class="production-heading"><h2>制作过程</h2><a href="${p.productionImages[0].src}" target="_blank" rel="noopener">查看原图 ↗</a></div>${production}${p.productionDescription?`<p class="production-description">${esc(p.productionDescription)}</p>`:''}</section><section class="production-video" aria-label="视频展示"><h2>视频展示</h2><div class="media-videos">${videos}</div></section></div>`:videoFirst&&videos?`<div class="media-videos">${videos}</div>`:longImages?`<div class="longform-images">${longImages}</div>`:`<div class="media-images">${images}</div>`;
+ const content=p.caseStudy==='garment'?window.renderGarmentCase():production?`<div class="video-project"><section class="production-section" aria-label="制作过程"><div class="production-heading"><h2>制作过程</h2><a href="${p.productionImages[0].src}" target="_blank" rel="noopener">查看原图 ↗</a></div>${production}${p.productionDescription?`<p class="production-description">${esc(p.productionDescription)}</p>`:''}</section><section class="production-video" aria-label="视频展示"><h2>视频展示</h2><div class="media-videos">${videos}</div></section></div>`:videoFirst&&videos?`<div class="media-videos">${videos}</div>`:longImages?`<div class="longform-images">${longImages}</div>`:`<div class="media-images">${images}</div>`;
  document.querySelector('#project-content').innerHTML=content;
  if(!dialog.open)dialog.showModal();dialog.scrollTop=0;document.body.classList.add('modal-open');
 }

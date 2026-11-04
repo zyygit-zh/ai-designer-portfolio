@@ -7,3 +7,5 @@
 内容：`data.js`；布局：`index.html`；样式：`style.css`；交互：`app.js`。
 
 真实项目与 AI 辅助概念练习分别标注。提交 main 后由 GitHub Pages 自动发布。
+
+2026-11-04：新增「服装商品图制作」案例，含实拍与主图对比、多色系列、可展开详情长图及模板标准。独立案例页：`garment-case.html`；内容：`garment-case.js`；样式：`garment-case.css`。
