@@ -50,8 +50,7 @@
 .media-image-sections { padding: clamp(18px, 4vw, 48px); }
 .media-image-section:first-child { padding-top: 18px; }
 .media-image-section + .media-image-section { margin-top: clamp(28px, 5vw, 60px); }
-.media-image-section h2 { font: 600 clamp(24px, 3vw, 36px)/1.25 var(--case-serif); letter-spacing: 0; }
-.media-image-section p { margin: 8px 0 18px; color: var(--case-muted); line-height: 1.65; }
+.media-image-section h2 { margin-bottom: 16px; font: 600 clamp(24px, 3vw, 36px)/1.25 var(--case-serif); letter-spacing: 0; }
 .media-image-section .media-images { gap: clamp(10px, 2vw, 24px); }
 .edition #lightbox { background: #1b130e; }
 .edition #lightbox :is(.lightbox-nav,#lightbox-caption,.lightbox-close) { color: var(--case-cream); }

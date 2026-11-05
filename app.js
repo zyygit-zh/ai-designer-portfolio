@@ -49,7 +49,7 @@ function showProject(id,videoFirst=false){
    const size=width&&height?`width="${width}" height="${height}"`:'';
    return `<button data-image="${index}" aria-label="放大${esc(caption)}"><img src="${src}" alt="${esc(caption)}" ${size} ${index?'loading="lazy"':''} decoding="async"></button>`;
   }).join('');
-  return showImageSections?`<section class="media-image-section"><h2>${esc(section.title)}</h2><p>${esc(section.text)}</p><div class="media-images">${buttons}</div></section>`:buttons;
+  return showImageSections?`<section class="media-image-section"><h2>${esc(section.title)}</h2><div class="media-images">${buttons}</div></section>`:buttons;
  }).join('');
  const videos=(p.videos||[]).map(([src,title,poster])=>`<video controls playsinline preload="none" poster="${poster}" src="${src}" aria-label="${esc(title)}"></video>`).join('');
  const production=(p.productionImages||[]).map(({src,width,height,alt})=>`<a class="production-image" href="${src}" target="_blank" rel="noopener" aria-label="查看${esc(p.title)}制作过程原图"><img src="${src}" alt="${esc(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async"></a>`).join('');

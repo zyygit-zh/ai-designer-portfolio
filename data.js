@@ -649,19 +649,17 @@ window.portfolioProjects.push({
   title: '情绪暂存所',
   subtitle: '暂暂 · 盲盒潮玩 IP 设计',
   category: 'ip',
-  cover: 'assets/emotion-storage/series-preview.webp',
+  cover: 'assets/emotion-storage/series-preview.webp?v=2',
   sections: [
     {
       title: '系列预览',
-      text: '暂暂是基础款，另外五款对应五种情绪。以下为 AI 辅助概念图与立体渲染。',
       images: [
-        ['assets/emotion-storage/series-preview.webp', '情绪暂存所 · 六款角色总览', 1774, 887],
-        ['assets/emotion-storage/concept-render.webp', '情绪暂存所 · 六款立体概念渲染', 1536, 1024]
+        ['assets/emotion-storage/series-preview.webp?v=2', '情绪暂存所 · 六款角色总览', 1774, 887],
+        ['assets/emotion-storage/concept-render.webp?v=2', '情绪暂存所 · 六款立体概念渲染', 1536, 1024]
       ]
     },
     {
       title: '角色三视图',
-      text: '按款展示正面、侧面与背面。点击图片可放大查看。',
       images: [
         ['assets/emotion-storage/zanzan.webp', '暂暂 · 三视图', 1774, 887],
         ['assets/emotion-storage/sulking.webp', '生闷气 · 三视图', 1983, 793],
