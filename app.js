@@ -4,7 +4,7 @@ const gallery=document.querySelector('#gallery'),galleryRange=document.querySele
 let filter='visual',currentProject=null,currentImages=[],imageIndex=0,lastTrigger=null;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function catalogProjects(){
- const order=filter==='ip'?[]:filter==='model'?['blender-kitchen','blender-street']:filter==='video'?['princess','emotion','product','character','clothing','guofeng']:['garment-details','kids-styling','double11-gifts','double11-pink','double11-type','weekend','form','nova','pawpal','city','zegl','socks','beiji'];
+ const order=filter==='ip'?['emotion-storage']:filter==='model'?['blender-kitchen','blender-street']:filter==='video'?['princess','emotion','product','character','clothing','guofeng']:['garment-details','kids-styling','double11-gifts','double11-pink','double11-type','weekend','form','nova','pawpal','city','zegl','socks','beiji'];
  return order.map(id=>projects.find(p=>p.id===id)).filter(Boolean);
 }
 function renderGallery(){
@@ -41,14 +41,19 @@ function showProject(id,videoFirst=false){
   const image=`<img src="${src}" alt="${esc(alt||p.title+'完整作品图')}" width="${width}" height="${height}" decoding="async">`;
   return caption?`<figure class="longform-tool"><figcaption><span>${esc(caption)}</span>${credit?`<span class="tool-credit">${esc(credit)}</span>`:''}</figcaption>${image}</figure>`:image;
  }).join('');
- const imageItems=p.sections.flatMap(section=>section.images);
- const images=imageItems.map(([src,caption],i)=>{
-  currentImages.push({src,caption});
-  return `<button data-image="${i}" aria-label="放大${esc(caption)}"><img src="${src}" alt="${esc(caption)}" ${i?'loading="lazy"':''} decoding="async"></button>`;
+ const showImageSections=p.category==='ip';
+ const images=p.sections.map(section=>{
+  const buttons=section.images.map(([src,caption,width,height])=>{
+   const index=currentImages.length;
+   currentImages.push({src,caption});
+   const size=width&&height?`width="${width}" height="${height}"`:'';
+   return `<button data-image="${index}" aria-label="放大${esc(caption)}"><img src="${src}" alt="${esc(caption)}" ${size} ${index?'loading="lazy"':''} decoding="async"></button>`;
+  }).join('');
+  return showImageSections?`<section class="media-image-section"><h2>${esc(section.title)}</h2><p>${esc(section.text)}</p><div class="media-images">${buttons}</div></section>`:buttons;
  }).join('');
  const videos=(p.videos||[]).map(([src,title,poster])=>`<video controls playsinline preload="none" poster="${poster}" src="${src}" aria-label="${esc(title)}"></video>`).join('');
  const production=(p.productionImages||[]).map(({src,width,height,alt})=>`<a class="production-image" href="${src}" target="_blank" rel="noopener" aria-label="查看${esc(p.title)}制作过程原图"><img src="${src}" alt="${esc(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async"></a>`).join('');
- const content=p.caseStudy==='white'||p.caseStudy==='kids'?window.renderCommerceCase(p.caseStudy):p.caseStudy==='garment'?window.renderGarmentCase():production?`<div class="video-project"><section class="production-section" aria-label="制作过程"><div class="production-heading"><h2>制作过程</h2><a href="${p.productionImages[0].src}" target="_blank" rel="noopener">查看原图 ↗</a></div>${production}${p.productionDescription?`<p class="production-description">${esc(p.productionDescription)}</p>`:''}</section><section class="production-video" aria-label="视频展示"><h2>视频展示</h2><div class="media-videos">${videos}</div></section></div>`:videoFirst&&videos?`<div class="media-videos">${videos}</div>`:longImages?`<div class="longform-images">${longImages}</div>`:`<div class="media-images">${images}</div>`;
+ const content=p.caseStudy==='white'||p.caseStudy==='kids'?window.renderCommerceCase(p.caseStudy):p.caseStudy==='garment'?window.renderGarmentCase():production?`<div class="video-project"><section class="production-section" aria-label="制作过程"><div class="production-heading"><h2>制作过程</h2><a href="${p.productionImages[0].src}" target="_blank" rel="noopener">查看原图 ↗</a></div>${production}${p.productionDescription?`<p class="production-description">${esc(p.productionDescription)}</p>`:''}</section><section class="production-video" aria-label="视频展示"><h2>视频展示</h2><div class="media-videos">${videos}</div></section></div>`:videoFirst&&videos?`<div class="media-videos">${videos}</div>`:longImages?`<div class="longform-images">${longImages}</div>`:`<div class="${showImageSections?'media-image-sections':'media-images'}">${images}</div>`;
  document.querySelector('#project-content').innerHTML=content;
  if(!dialog.open)dialog.showModal();dialog.scrollTop=0;document.body.classList.add('modal-open');
 }
@@ -59,9 +64,11 @@ function syncRoute(){
   let parts;try{parts=location.hash.slice(9).split('/').map(decodeURIComponent)}catch{return}
   const [id,mode]=parts;
   if(id==='garment-details'||id==='white-background'||id==='kids-styling'){closeProject();document.querySelector('#works').scrollIntoView();return;}
-  if(projects.some(p=>p.id===id)&&parts.length<=2&&(!mode||mode==='video')){
-   if(mode==='video'&&filter!=='video'){
-    filter='video';document.querySelectorAll('[data-filter]').forEach(b=>{const active=b.dataset.filter===filter;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});renderGallery();
+  const project=projects.find(p=>p.id===id);
+  if(project&&parts.length<=2&&(!mode||mode==='video')){
+   const routeFilter=mode==='video'?'video':project.category==='ip'?'ip':null;
+   if(routeFilter&&filter!==routeFilter){
+    filter=routeFilter;document.querySelectorAll('[data-filter]').forEach(b=>{const active=b.dataset.filter===filter;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});renderGallery();
    }
    showProject(id,mode==='video');
   }else closeProject();

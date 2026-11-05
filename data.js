@@ -644,3 +644,32 @@ window.portfolioProjects.push(...[{id:'blender-kitchen',title:'复古厨房 · �
 
 window.portfolioProjects.push({id:'garment-details',title:'服装商品视觉',subtitle:'实拍转白底 · 主图与详情设计',category:'visual',cover:'assets/garment/cover.webp',caseStudy:'garment',sections:[]});
 window.portfolioProjects.push({id:'kids-styling',title:'太阳雪人 · 童装换装',subtitle:'款式平铺与模特上身对照',category:'visual',cover:'assets/sun-snowman/cover.webp',caseStudy:'kids',sections:[]});
+window.portfolioProjects.push({
+  id: 'emotion-storage',
+  title: '情绪暂存所',
+  subtitle: '暂暂 · 盲盒潮玩 IP 设计',
+  category: 'ip',
+  cover: 'assets/emotion-storage/series-preview.webp',
+  sections: [
+    {
+      title: '系列预览',
+      text: '暂暂是基础款，另外五款对应五种情绪。以下为 AI 辅助概念图与立体渲染。',
+      images: [
+        ['assets/emotion-storage/series-preview.webp', '情绪暂存所 · 六款角色总览', 1774, 887],
+        ['assets/emotion-storage/concept-render.webp', '情绪暂存所 · 六款立体概念渲染', 1536, 1024]
+      ]
+    },
+    {
+      title: '角色三视图',
+      text: '按款展示正面、侧面与背面。点击图片可放大查看。',
+      images: [
+        ['assets/emotion-storage/zanzan.webp', '暂暂 · 三视图', 1774, 887],
+        ['assets/emotion-storage/sulking.webp', '生闷气 · 三视图', 1983, 793],
+        ['assets/emotion-storage/low-battery.webp', '低电量 · 三视图', 1983, 793],
+        ['assets/emotion-storage/overthinking.webp', '想太多 · 三视图', 1774, 887],
+        ['assets/emotion-storage/pretending-happy.webp', '假装开心 · 三视图', 1774, 887],
+        ['assets/emotion-storage/social-overload.webp', '社交过载 · 三视图', 1774, 887]
+      ]
+    }
+  ]
+});
