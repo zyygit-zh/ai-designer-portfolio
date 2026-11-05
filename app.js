@@ -4,7 +4,7 @@ const gallery=document.querySelector('#gallery'),galleryRange=document.querySele
 let filter='visual',currentProject=null,currentImages=[],imageIndex=0,lastTrigger=null;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function catalogProjects(){
- const order=filter==='ip'?['emotion-storage']:filter==='model'?['blender-kitchen','blender-street']:filter==='video'?['princess','emotion','product','character','clothing','guofeng']:['garment-details','kids-styling','double11-gifts','double11-pink','double11-type','weekend','form','nova','pawpal','city','zegl','socks','beiji'];
+ const order=filter==='ip'?['emotion-storage']:filter==='model'?['blender-kitchen']:filter==='video'?['princess','emotion','product','character','clothing','guofeng']:['garment-details','kids-styling','double11-gifts','double11-pink','double11-type','weekend','form','nova','pawpal','city','zegl','socks','beiji'];
  return order.map(id=>projects.find(p=>p.id===id)).filter(Boolean);
 }
 function renderGallery(){
