@@ -1,0 +1,51 @@
+/* The artwork frames belong to the site, while case photos keep their original colors. */
+:is(.garment-standalone, .commerce-standalone, .edition) {
+  --case-paper: #f0e5d2;
+  --case-mat: #fbf2e2;
+  --case-ink: #251b13;
+  --case-muted: #66513d;
+  --case-rule: #aa8456a6;
+  --case-cream: #fff2d7;
+  --case-serif: 'Songti SC', 'Noto Serif CJK SC', SimSun, Georgia, serif;
+}
+:is(.garment-standalone, .commerce-standalone) { background: #211811; color: var(--case-ink); }
+.garment-standalone #garment-case-page, .commerce-standalone > main { background: var(--case-paper); }
+:is(.garment-standalone > .gc-back, .commerce-standalone > .pc-back) {
+  background: #2a1e15; color: var(--case-cream); border: 1px solid #d6ad73;
+  box-shadow: none; border-radius: 3px; font-family: var(--case-serif);
+}
+:is(.garment-case, .process-case.pc-sun-snowman) { background: var(--case-paper); color: var(--case-ink); }
+.garment-case { --gc-paper: #f0e5d2; --gc-ink: #251b13; --gc-line: #aa845688; --gc-muted: #66513d; }
+:is(.garment-case .gc-hero, .pc-sun-snowman .pc-hero) {
+  border-color: #9c7448; color: var(--case-cream);
+  background: linear-gradient(90deg, #27190feb 0%, #27190f61 85%), url('assets/oil-edition/atelier.webp') 52% 53% / cover;
+}
+.pc-sun-snowman .pc-hero {
+  background-image: linear-gradient(90deg, #291710ec, #29171061 89%), url('assets/oil-edition/tools.webp');
+}
+:is(.garment-case .gc-hero h1, .pc-sun-snowman .pc-hero h1) { color: var(--case-cream); font-family: var(--case-serif); }
+:is(.garment-case .gc-kicker,.garment-case .gc-topline,.garment-case .gc-hero-bottom > p,.garment-case .gc-hero-bottom > span,.pc-sun-snowman .pc-hero :is(.pc-top,.pc-eyebrow,.pc-intro)) { color: #ffe3b6; }
+.pc-sun-snowman .pc-hero h1 em { color: #f1c485; }
+:is(.garment-case .gc-section h2, .garment-case .gc-delivery strong, .garment-case .gc-capability-list h3) { color: var(--case-ink); font-family: var(--case-serif); }
+:is(.garment-case .gc-section-head > p, .garment-case .gc-num, .garment-case .gc-facts dt, .garment-case .gc-workflow figcaption, .pc-sun-snowman .pc-kids-pair figcaption) { color: var(--case-muted); }
+:is(.garment-case .gc-section,.garment-case .gc-facts,.pc-sun-snowman .pc-kids-pair) { border-color: var(--case-rule); }
+:is(.garment-case .gc-photo,.garment-case .gc-series-grid figure,.garment-case .gc-workflow figure,.pc-sun-snowman .pc-flat-image,.pc-sun-snowman .pc-model-image) {
+  border: 1px solid var(--case-rule); box-shadow: none; background: var(--case-mat);
+}
+:is(.garment-case .gc-footer,.pc-sun-snowman .pc-footer) { background: #281d15; color: var(--case-cream); border-color: var(--case-rule); }
+:is(.garment-case .gc-footer a,.pc-sun-snowman .pc-footer a) { color: #f7d79e; }
+
+.edition #project-dialog { background: var(--case-paper); color: var(--case-ink); border: 1px solid #be965b; }
+.edition #project-dialog .dialog-top { background: #2b1f16f5; color: var(--case-cream); border-color: #b68a4a8c; }
+.edition #project-dialog .dialog-top > span, .edition #project-dialog #close-project { color: var(--case-cream); }
+.edition #project-dialog .project-header { background: linear-gradient(90deg, #291a11f3, #291a1179), url('assets/oil-edition/atelier.webp') 50% 46% / cover; color: var(--case-cream); }
+.edition #project-dialog .project-header :is(h2,.summary,.eyebrow,.project-type) { color: var(--case-cream); }
+.edition #project-dialog .project-header h2 { font-family: var(--case-serif); }
+.edition #project-dialog :is(.project-facts,.project-note,.production-section,.production-video,.longform-tool) { border-color: var(--case-rule); }
+.edition #project-dialog :is(.project-facts,.project-facts strong,.project-note,.section-copy,.project-images figcaption,.video-block p,.production-description,.production-heading > a) { color: var(--case-muted); }
+.edition #project-dialog :is(.project-body h3,.project-body h4,.production-heading h2,.production-video h2) { color: var(--case-ink); font-family: var(--case-serif); }
+.edition #project-dialog :is(.project-images img,.longform-tool) { background: var(--case-mat); }
+.edition #project-dialog .longform-tool figcaption { color: var(--case-ink); }
+.edition #project-dialog .tool-credit { color: #523620; border-color: var(--case-rule); background: #ead4af; }
+.edition #lightbox { background: #1b130e; }
+.edition #lightbox :is(.lightbox-nav,#lightbox-caption,.lightbox-close) { color: var(--case-cream); }
